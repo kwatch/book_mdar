@@ -4,12 +4,12 @@ The book is written in Markdown comes complete with a set of rake tasks for
 publishing to HTML and plain text formats.
 Run 'rake -T' from the root to see the options available.
 
-¤³¤ÎËÜ¤Ï Markdown ·Á¼°¤Ç½ñ¤«¤ì¤Æ¤ª¤ê¡¢rake ¥¿¥¹¥¯¤Ë¤è¤Ã¤Æ HTML ·Á¼°¤È¥×¥ì¡¼¥ó¥Æ¥­¥¹¥È·Á¼°¤ËÊÑ´¹¤µ¤ì¤Ş¤¹¡£
-ÍøÍÑ²ÄÇ½¤Ê¥ª¥×¥·¥ç¥ó¤ò¸«¤ë¤Ë¤Ï¡¢¡ÌÌõÃí: ¥×¥í¥¸¥§¥¯¥È¤Î¡Í¥ë¡¼¥È¥Ç¥£¥ì¥¯¥È¥ê¤Ç 'rake -T' ¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤¡£
+ã“ã®æœ¬ã¯ Markdown å½¢å¼ã§æ›¸ã‹ã‚Œã¦ãŠã‚Šã€rake ã‚¿ã‚¹ã‚¯ã«ã‚ˆã£ã¦ HTML å½¢å¼ã¨ãƒ—ãƒ¬ãƒ¼ãƒ³ãƒ†ã‚­ã‚¹ãƒˆå½¢å¼ã«å¤‰æ›ã•ã‚Œã¾ã™ã€‚
+åˆ©ç”¨å¯èƒ½ãªã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¦‹ã‚‹ã«ã¯ã€ã€”è¨³æ³¨: ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ã€•ãƒ«ãƒ¼ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã§ 'rake -T' ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
 
 You will need to have one of the following gems installed.
 
-¼¡¤Î¤¦¤Á¤Î¤É¤ì¤«¤Î gems ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤ª¤¯É¬Í×¤¬¤¢¤ê¤Ş¤¹¡£
+æ¬¡ã®ã†ã¡ã®ã©ã‚Œã‹ã® gems ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
 
   * `rdiscount`
   * `rpeg-markdown`
@@ -18,33 +18,33 @@ You will need to have one of the following gems installed.
 
 Use `sudo gem install <name>` to install one of them.
 
-¾åµ­¤Î¤¦¤Á¤Î¤É¤ì¤«¤ò `sudo gem install <name>` ¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¯¤À¤µ¤¤¡£
+ä¸Šè¨˜ã®ã†ã¡ã®ã©ã‚Œã‹ã‚’ `sudo gem install <name>` ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€‚
 
 ## To Contribute
 
 Fork the git repository and send Matt a pull request (matt@new-bamboo.co.uk)
 Please try and keep a 80 column wrap, it makes git-diffs nicer.
 
-Git ¥ê¥İ¥¸¥È¥ê¤ò¥Õ¥©¡¼¥¯¤·¤Æ¡¢pull ¥ê¥¯¥¨¥¹¥È¤ò Matt (matt@new-bamboo.co.uk) ¤Ş¤ÇÁ÷¤Ã¤Æ¤¯¤À¤µ¤¤¡£
-¤Ê¤ë¤Ù¤¯ 1 ¹Ô 80 ¥«¥é¥à¤Ë¤¹¤ë¤è¤¦¤Ë¤·¤Æ¤¯¤À¤µ¤¤¡£git diff ¤¬¸«¤ä¤¹¤¯¤Ê¤ê¤Ş¤¹¡£
+Git ãƒªãƒã‚¸ãƒˆãƒªã‚’ãƒ•ã‚©ãƒ¼ã‚¯ã—ã¦ã€pull ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ Matt (matt@new-bamboo.co.uk) ã¾ã§é€ã£ã¦ãã ã•ã„ã€‚
+ãªã‚‹ã¹ã 1 è¡Œ 80 ã‚«ãƒ©ãƒ ã«ã™ã‚‹ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚git diff ãŒè¦‹ã‚„ã™ããªã‚Šã¾ã™ã€‚
 
 Thanks for your patch!
 
-¥Ñ¥Ã¥Á¤Ï´¿·Ş¤·¤Ş¤¹!
+ãƒ‘ãƒƒãƒã¯æ­“è¿ã—ã¾ã™!
 
 ## Legal 
 
 This work is licensed under a Creative Commons Attribution-Noncommercial 
 2.0 UK: England & Wales License.
 
-ËÜÃøºîÊª¤Î¥é¥¤¥»¥ó¥¹¤Ï Creative Commons Attribution-Noncommercial 2.0 UK: England & Wales License ¤Ç¤¹¡£
+æœ¬è‘—ä½œç‰©ã®ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã¯ Creative Commons Attribution-Noncommercial 2.0 UK: England & Wales License ã§ã™ã€‚
 
 * http://creativecommons.org/licenses/by-nc/2.0/uk/
 
 Source code of the applications are dual licensed under the MIT and GPL 
 licenses:
 
-¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤Î¥½¡¼¥¹¥³¡¼¥É¤Ï¡¢MIT ¥é¥¤¥»¥ó¥¹¤È GPL ¥é¥¤¥»¥ó¥¹¤Î¥Ç¥å¥¢¥ë¥é¥¤¥»¥ó¥¹¤Ç¤¹¡£
+ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ã€MIT ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã¨ GPL ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã®ãƒ‡ãƒ¥ã‚¢ãƒ«ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã§ã™ã€‚
 
 * http://www.opensource.org/licenses/mit-license.php
 * http://www.gnu.org/licenses/gpl.html
