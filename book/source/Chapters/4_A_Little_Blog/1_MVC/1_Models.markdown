@@ -677,7 +677,7 @@ hack-around. How enterprise-y!
 
 文脈ごとのバリデーションを適切に使えば、最後には頭痛と労働から自分自身を解放することができます〔訳注: "later on down the line" って何???〕。
 また投稿がエラーを含むべきでなかったり、または含んでいてもいいというような、異なるシナリオに対応しなければならなくても -- ハックする必要がまったくありません。
-なんとエンタープライジー (enterprise-y) なんでしょう!
+なんというエンタープライジー (enterprise-y) !
 
 #### validates\_with\_method
 
@@ -685,9 +685,15 @@ Another very powerful feature in dm-validations is `validates\_with\_method`.
 Think of it as like overloading `valid?` only with the full power of real
 validations still there too.
 
+dm-validations が持っているもうひとつの強力な機能は、`validates\_with\_method` です。
+これはちょうど、バリデーションの強力さはそのままに、`valid?` をオーバーロードしたようなものです。
+
 Say, for example, you've got an Event model that needs to make sure the
 `end\_date` for the event is greater than the start_date. Wouldn't want to
 break the laws of physics, so we'd do something like:
+
+たとえば Event というモデルがあったとし、これの `end\_date` が start_date より大きいことを確認しておきたいとします。
+物理法則を無視することはしたくないので、たとえば次のようにします:
 
     class Event < ActiveRecord::Base
       def valid?
@@ -698,6 +704,9 @@ break the laws of physics, so we'd do something like:
 Yup, it's pretty simple with ActiveRecord. Just toss in our own valid? method and
 we're done. With DataMapper, things are a touch more complicated, but not
 difficult, and buy you the full power of dm-validations:
+
+自分自身で valid? メソッドを定義するだけであり〔訳注: わからん???〕、ActiveRecord を使って実にシンプルにできました。
+DataMapper の場合は、より複雑になりますが、難しくはなく、また dm-validations の力をすべて享受できます。
 
     class Event
       include DataMapper::Resource
@@ -724,6 +733,15 @@ first entry in the array is `false`, which lets DataMapper know the validation
 has failed.  The second entry is a string, which is added to `@event.errors` so
 the user has some idea what has gone wrong.
 
+ここでは、2 つのことが行われています。
+最初に、モデルに対して `check_times` というバリデーション専用のメソッドを使うことを宣言します。
+続いて、メソッド自身が定義されています。
+これは実にシンプルなメソッドです。
+もし `start\_time` が `end\_time` より前であれば、エラーがないことを表す `true` を返します。
+そうでなければ、配列を返します。
+配列の最初の要素は `false` であり、これによって DataMapper はバリデーションが失敗したことを知ります。
+2 番目の要素は文字列であり、ユーザに何が間違っていたかを知らせるために、この文字列が `@event.errors` に追加されます。
+
 Of course, this custom validator can also be applied only in certain contexts,
 just by adding a `:when => [...]` on the `validates_with_method` line.  This
 brings us a lot of flexibility, and as we're validating with a ruby method, we
@@ -731,28 +749,49 @@ can get as complex as we need to specify our behaviour.  Much nicer than just
 overriding valid.  It's this functionality which requires the context to be
 passed in (Although your method can feel free to ignore it).
 
+もちろん、この特注のバリデータは、ある特定の文脈でのみ適用させるようにすることができます。
+そのためには `validates_with_method` の行に `:when => [...]` を追加します。
+これにより、多大な柔軟性を得ることができます。
+Ruby のメソッドを使ってバリデートしているので、自分の好きなだけ振る舞いを指定できます。
+単に valid メソッドをオーバーライドするよりもずっといいです。
+この機能こそ、文脈を指定することが必要とされるものです (もちろん文脈を無視してもいっこうに構いません)。
 
-### Migrations
+### Migrations (マイグレーション)
 
 There is a rake task to migrate your models, but be warned these are currently
 destructive!
 
+自分のモデルをマイグレートするための rake タスクが用意されています。
+しかし、現時点ではこれらは破壊的であると警告されます!
+
     rake dm:db:automigrate    # Automigrates all models
     rake dm:db:autoupgrade     # Perform non destructive automigration
 
+    rake dm:db:automigrate    # 全モデルについて自動マイグレーションを実行
+    rake dm:db:autoupgrade    # 非破壊的な自動マイグレーションを実行
+
 You can also create databases from the Merb console (`merb -i`)
+
+データベースは Merb コンソール (`merb -i`) で作成することもできます。
+
 
     Post.auto_migrate!
 
 or
 
+または
+
     Post.auto_upgrade!
 
 This does the same job as the rake task migrating all your models.
 
+これは、自分のすべてのモデルについてマイグレーションを行う rake タスクと同じことを行います。
+
     DataMapper.auto_migrate!
 
 Why the two commands? They both do slightly different things.
+
+なぜ 2 つのコマンドがあるのでしょうか? 両者は少しだけ違うことを行います。
 
 The first, `auto_migrate!`, works by dropping the table (if it exists) and all
 of its data then working out which columns need to exist from the model
@@ -760,12 +799,21 @@ definition, before finally rebuilding the table in the database.  This includes
 any constraints imposed. For example, `:nullable => false` will add a `NOT NULL`
 to the column definition.
 
+最初の `auto_migrate!` のほうは、テーブルとデータを削除し (もしあれば)、それからモデル定義からどのカラムが必要かを判断し、最後にテーブルをデータベースに作成します。
+また、制約もすべて考慮されます。
+たとえば、`:nullable => false` が指定されていればカラム定義に `NOT NULL` が付加されます。
+
 `auto_upgrade!` on the other hand, creates the table from nothing only if the
 table isn't there already.  If it _is_ there, then it compares the current table
 to the model.  If there are properties in the model not defined as columns in
 the table, it will add them to the table.  It does have some limitations though.
 It doesn't delete columns, and it can't detect renaming them.
 
+一方、`auto_upgrade!` のほうは、テーブルがまだ存在していない場合にのみテーブルを作成します。
+もしすでに_存在している_場合は、現在のテーブルとモデルとをを比較します。
+テーブルのカラムにないプロパティがモデル中にあれば、それをテーブルに追加します。
+ただし、いくつか制限があります。
+カラムは削除しませんし、カラム名の変更も検出できません。
 
 #### Migration Files
 
