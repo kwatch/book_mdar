@@ -815,13 +815,17 @@ It doesn't delete columns, and it can't detect renaming them.
 ただし、いくつか制限があります。
 カラムは削除しませんし、カラム名の変更も検出できません。
 
-#### Migration Files
+#### Migration Files (マイグレーションファイル)
 
 Whilst the preceding commands and tasks can keep the database schema in
 perfect sync with the models, they can also wipe out any data you might have in
 the database, or fail to remove columns which are no longer needed.  To avoid
 this, AR style migrations are also supported.  These are stored in `schema/migrations`
 and are ruby files.
+
+先ほど紹介したコマンドとタスクは、データベーススキーマとモデルとを完全に同期させるものでしたが、データベース中のデータをすべて消し去ってしまったり、もう必要のなくなったカラムが削除されないという問題がありました。
+これを避けるために、AR スタイルのマイグレーションもサポートされています。
+これらは Ruby ファイルであり、`schema/migrations` に格納されます。
 
     migration(1, :add_homepage_to_comments ) do
       up do
@@ -845,11 +849,20 @@ applied.  This number doesn't have to be unique, although a migration mustn't
 have a higher number than a migration it depends on.  You shouldn't define
 modifications to a table to happen before that table is made, for example.
 
+ファイルの最初の行は、マイグレーションを一意に特定するためのものであり、2 つのコンポーネントから構成されています。
+〔訳注: 2 つのうち〕より重要なのは `:add_homepage_to_comments` という名前のほうであり、これはデータベースに対して適用されたすべてのマイグレーションにおいて一意である必要があります。
+数字のほうは一意である必要はありませんが、そのマイグレーションが依存する別のマイグレーションより高い〔訳注: 小さい〕値であってはいけません。
+たとえば、あるテーブルに対する修正を、そのテーブルが作成されるより前に定義することはできません。
+
 The `up` and `down` blocks describe the actual behaviour of the migration. `up`
 is what happens when the migration is applied, and `down` happens when the
 migration is 'undone'.  This might not mean undone in the literal sense - if you
 migrate to remove a column, and add it back in the `down` migration, while the
 column will be there, all the data will be lost.
+
+`up` と `down` のブロックには、マイグレーションの実際の動作を記述します。
+`up` のほうはマイグレーションが適用されるときに実行され、`down` のほうはマイグレーションを 「元に戻す」ときに実行されます。
+これは、文字通りの意味で元に戻されるわけではありません - もしカラムを削除するようなマイグレーションを作成し、かつそれを追加し直すような `down` マイグレーションを作成した場合、〔訳注: `down` マイグレーションで元に戻そうとしても〕そのカラムのデータは失われてしまうでしょう。
 
 In this case, as the name suggested, we add a homepage column to comments.
 It's specified much like a property (and should match up with the relevant
@@ -858,8 +871,15 @@ essentially all those which are just database features: `:length`, `:nullable`
 are valid, but `:private`, which is a pure ruby option is not allowed.  The
 `down` migration is the opposite - it removes the column.
 
+今回の場合、名前を見ればわかりますが、comments テーブルに homepage カラムを追加しています。
+これはプロパティによく似た感じで指定されます (また model.rb ファイルの中で関係のあるプロパティと一致しなければいけません)。
+カラムの追加にはたくさんの〔訳注: プロパティと〕同じオプションを指定可能です - 本質的にはデータベースの機能であるものすべてが使用可能です: たとえば `:length` と `:nullable` が使用可能ですが、純粋に Ruby のオプションである `:private` は使用できません。
+`down` マイグレーションは逆であり、カラムを削除します。
+
 To apply the migrations, there are a couple of rake tasks available through
 merb_datamapper
+
+マイグレーションを適用するために、merb_datamapper によって 2 つの Rake タスクが用意されてます。
 
     rake dm:db:migrate:up                   # migrates the database up
     rake dm:db:migrate:down                 # migrates the database down
@@ -871,7 +891,15 @@ and down migrations, the version determines the highest order that will be
 reflected in the table, either by applying `up` migrations until the level is
 complete or applying all the `down` migrations greater than the given level.
 
+これらはすべてのマイグレーションを順に適用するか、削除します。
+すべての up マイグレーション (または down マイグレーション) を適用したくはない場合もあるでしょう。
+その場合、〔訳注: Rake コマンドに〕`VERSION=2` を追加するか、`rake dm:db:migrate:up[2]` のようにしてタスクを起動するかしてください。
+up と down のマイグレーションの両方において、テーブルに対して反映されるいちばん高いレベル番号が、バージョンによって決定されます〔訳注: ???〕。
+`up` マイグレーションの場合はそのレベルに達するまで、また `down` マイグレーションの場合は指定されたレベルより大きいマイグレーションが、すべて適用されます。
+
 There are a couple of generators to make migrations
+
+マイグレーションを作成するためのジェネレータが 2 つ用意されています。
 
     merb-gen migration name_of_migration    # an empty migration
     merb-gen resource_migration Post        # a migration for the post class
@@ -881,13 +909,21 @@ The first creates an empty migration stub with the name defined and an `up` and
 does it's best to construct the appropriate migration from the properties of the
 model.  It currently doesn't generate anything to do with relationships, however.
 
-### Other Misc Things
+最初のほうは、マイグレーションのスタブを `up` と `down` のブロックが空の状態で作成し、それに指定された名前をつけます。
+2 番目のほうは、該当するクラスを app/models から読み込み、そのモデルのプロパティから適切なマイグレーションを構築するよう最大限努力します。
+ただし現在のところ、関連づけについては何も生成してくれません。
 
-#### Callbacks
+### Other Misc Things (その他の雑多なこと)
+
+#### Callbacks (コールバック)
 
 Callbacks in DataMapper > 0.9 are very powerful.  In any DataMapper::Resource
 you can set before and after callbacks on any instance/class method.  There are
 a couple of different ways to define callbacks:
+
+DataMapper 0.9 以降では、コールバックが非常に強力です。
+どの DataMapper::Resource のどのインスタンスメソッド/クラスメソッドに対しても、呼び出し前と後のコールバックを設定することが可能です。
+コールバックを設定する方法は 2 つあります:
 
     class Post
       include DataMapper::Resource
@@ -896,6 +932,7 @@ a couple of different ways to define callbacks:
       property :title, String, :length => 200
 
       # before save call the instance method make_permalink
+      # save メソッドを呼び出す前に、インスタンスメソッド make_permalink を呼び出す
       before :save, :make_permalink
 
       def make_permalink
@@ -903,6 +940,7 @@ a couple of different ways to define callbacks:
       end
 
       #callbacks can be defined for any method
+      # コールバックはどのメソッドに対しても定義できる
       after :publish, :send_message
 
       def publish
@@ -914,13 +952,14 @@ a couple of different ways to define callbacks:
       end
 
       # defining a callback on a class method, passing in a block to run before its created.
+      # 作成前に実行されるブロックを渡すことで、コールバックをクラスメソッドに定義する。
       before_class_method :create do
         # do something before a record is created
       end
 
     end
 
-#### Bulk Operations
+#### Bulk Operations (大量のデータ操作)
 
 Sometimes, you have to operate on a large number of records at once, to do
 exactly the same thing to each of them.  The example earlier for deleting old
@@ -930,26 +969,49 @@ could just go `Comments.all(:date.lt => Date.today - 20).destroy!` and it would
 produce an appropriate query to do it in one operation and without loading all
 those posts which are about to be deleted?
 
+ときどき、一度に大量のレコードに対して、まったく同じ操作をしなければならない場合もあります。
+先の例では、古い投稿を each で消していました。
+この場合、`SELECT` 文を何回かと、大量の `DELETE` 文が実行されました。
+この `DELETE` 文は、データベースの大きさによっては数百回実行される可能性が潜在的にあります。
+もし `Comments.all(:date.lt => Date.today - 20).destroy!` みたいなことができて、それが適切なクエリーが発行されることによって 1 回の操作で済み、かつ削除すべきデータをすべて読み込むようなことを避けるようになってくれてたらいいと思いませんか?
+
 Well, that's what happens.  `Collection`s are 'lazily evaluated', which is to
 say, they don't do anything until they've been 'kicked'.  `.each`, mentioned
 earlier, is a kicker method. It issues a `SELECT` appropriate to the conditions.
 `.destroy!` is another one, except it issues a `DELETE`.  The other bulk method is
 `update!`, which looks like (example taken from the DataMapper source)
 
+ええ、その通りに動作します。
+`Collection`s は「遅延評価」されます。
+これはいうなれば、「開始する (kick)」までは〔訳注: データベースに対して〕何もしないということです。
+前に出てきた `.each` は「開始する」メソッドであり、条件に対して適切な `SELECT` 文を発行します。
+`.destroy!` は別の「開始する」メソッドであり、〔訳注: `SELECT` 文のかわりに〕`DELETE` 文を発行すること以外は同じです。
+〔訳注: こういったメソッドは bulk メソッドといい、そして〕他の bulk メソッドとしては `update!` があり、これは次のように使います (DataMapper のソースから持ってきた例です):
+
     Person.all(:age.gte => 21).update!(:allow_beer => true)
 
 This command would update the `allow_beer` attribute of all people aged 21 or
 older in the database, all in one `UPDATE` statement.
 
+このコマンドは、データベースにある 21 歳以上の人たち全員の `allow_beer` 属性を、1 回の `UPDATE` 分で更新します。
+
 Note: ActiveRecord has a well known `Model.delete_all` class method to erase all table entries. In DataMapper to delete all instances of an Object in the database, you would do `Model.all.destroy!`
 
-#### Aggregates
+注意: ActiveRecord は、よく知られているように `Model.delete_all` クラスメソッドがあり、これでテーブルのエントリをすべて消去することができます。
+DataMapper では、データベース中のオブジェクトのインスタンスをすべて削除するには `Model.all.destroy!` を使います。
+
+#### Aggregates (集計)
 
 DataMapper by default does not provide aggregator methods, but dm-aggregates
 in dm-more does. After adding `dependency "dm-aggregates"` to your merb `init.rb`
 file, your resource model will have aggregator methods including `count`, `min`,
 `max`, `avg`, and `sum`.  You can pass conditions to any of these aggregator
 methods the same as Resource.first or Resource.all
+
+DataMapper は、デフォルトでは集計用メソッドを提供していません。
+しかし dm-more に含まれる dm-aggregates がそれらを提供してくれます。
+Merb の設定ファイル `init.rb` に `dependency "dm-aggregates"` を追加すると、モデルクラスで `count`, `min`, `max`, `avg`, `sum` という集計用メソッドが使えるようになります。
+これらの集計用メソッドには、Resource.first や Resource.all と同じように、条件を渡すことができます。
 
     Post.count :title.like => "%hello world%"
 
@@ -961,13 +1023,18 @@ methods the same as Resource.first or Resource.all
     Post.sum(:comments_count)
 
 
-#### Each
+#### Each (Each メソッド)
 
 Each works like like expected iterating over a number of rows and you can pass
 a block to it. The difference between `Comments.all.each` and `Comments.each`
 is that instead of retrieving all the rows at once, each works in batches
 instantiating a few objects at a time and executing the block on them (so is less
 resource intensive). Each is similar to a finder as it can also take options:
+
+Each は、たくさんの行に対して繰り返しを行ないます〔訳注: "like like" ってなんじゃ???〕。
+また Each にブロックを渡すことができます。
+`Comments.all.each` と `Comments.each` の違いは、前者が一度にすべての行を取り出すのに対し、後者はオブジェクトを少しずつインスタンス化してブロックを実行するという点です (そのため後者のほうがリソースの消費が劇的に少なくて済みます)。
+Each はオプションを取ることができるので、finder に似ています:
 
     Comments.all.each(:date.lt => Date.today - 20).each do |c|
       c.destroy
@@ -976,10 +1043,17 @@ resource intensive). Each is similar to a finder as it can also take options:
 NB: This isn't currently working in DataMapper.  It instead fetches all the
 records.  However, it will be reimplemented soon.
 
-#### Changing the Table Name
+NB: これは、まだ DataMapper では動作しません。
+かわりにすべてのレコードをフェッチします。
+しかしながら、まもなく再実装される予定です。
+
+#### Changing the Table Name (テーブル名の変更)
 
 You can set the name of the database table in your model if it is called
 something different by overriding a method in the class:
+
+モデルの中で、データベーステーブル名を設定することができます。
+そのためには、クラスの中でメソッドをオーバーライドします:
 
     def default_storage_name
       'list_of_posts'
@@ -989,4 +1063,10 @@ This is only necessary if you are using an already existing database.  If you
 have a lot of tables to rename, consider instead a `NamingConvention`, detailed
 later.
 
+これは、既存のデータベースを使う場合にのみ必要です。
+もし名前を変更しなければいけないテーブルがたくさんある場合は、次に説明する `NamingConvention` を使うことを検討してください。
+
 TODO: Write NamingConventions section.
+
+TODO: NamingConventions の章を書く。
+
