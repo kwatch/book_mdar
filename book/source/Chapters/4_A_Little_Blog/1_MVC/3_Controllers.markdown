@@ -5,6 +5,8 @@
 
 Merb filters are quite powerful, etc.. 
 
+Merb のフィルタは実に強力です。たとえば...
+
 In Rails:
 
     before_filter :find_post
@@ -16,6 +18,8 @@ In Merb:
     after  :send_email, :only => :create
     
 `skip_before` is used to skip a before filter
+
+`skip_before` は before フィルタを飛ばすのに使われます。
 
 > NB: it's __exclude__ not except
 

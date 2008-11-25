@@ -2,6 +2,8 @@
 
 Routing in Merb is similar to Rails, if you take a look at your `router.rb` file
 
+自分の `router.rb` ファルを見ればわかりますが、Merb におけるルーティングが Rails のそれと似ています。
+
 
 ### Strings/Regex
 
