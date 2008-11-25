@@ -7,13 +7,13 @@
 
 Use the partial method to render a partial from the current directory. If you pass a hash as the second argument the contents will be made available as local variables in the partial.
 
-¥«¥ì¥ó¥È¥Ç¥£¥ì¥¯¥È¥ê¤Ç¤ÎÉôÊ¬¥Æ¥ó¥×¥ì¡¼¥È¤òÉÁ¼Ì¤¹¤ë¤Ë¤Ï¡¢partial ¥á¥½¥Ã¥É¤ò»È¤¤¤Þ¤¹¡£
-¤â¤·Âè 2 °ú¿ô¤È¤·¤Æ¥Ï¥Ã¥·¥å¤òÅÏ¤¹¤È¡¢¤½¤ÎÃÍ¤ÏÉôÊ¬¥Æ¥ó¥×¥ì¡¼¥ÈÆâ¤Ç¤Ï¥í¡¼¥«¥ëÊÑ¿ô¤È¤·¤Æ»ÈÍÑ²ÄÇ½¤Ç¤¹¡£
+ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã§ã®éƒ¨åˆ†ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’æå†™ã™ã‚‹ã«ã¯ã€partial ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½¿ã„ã¾ã™ã€‚
+ã‚‚ã—ç¬¬ 2 å¼•æ•°ã¨ã—ã¦ãƒãƒƒã‚·ãƒ¥ã‚’æ¸¡ã™ã¨ã€ãã®å€¤ã¯éƒ¨åˆ†ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆå†…ã§ã¯ãƒ­ãƒ¼ã‚«ãƒ«å¤‰æ•°ã¨ã—ã¦ä½¿ç”¨å¯èƒ½ã§ã™ã€‚
 
     partial :post, {:comments => @post.comments}
 
 To display the latest posts on our blog's front page, we use the :with and :as arguments to render a collection.
 
-¼«Ê¬¤Î¥Ö¥í¥°¤Î¥Õ¥í¥ó¥È¥Ú¡¼¥¸¤ÇºÇ¿·¤Î posts ¤òÉ½¼¨¤¹¤ë¤¿¤á¤Ë¡¢:with ¤È :as ¤ò»È¤Ã¤Æ¥³¥ì¥¯¥·¥ç¥ó¤òÉÁ¼Ì¤·¤Þ¤¹¡£
+è‡ªåˆ†ã®ãƒ–ãƒ­ã‚°ã®ãƒ•ãƒ­ãƒ³ãƒˆãƒšãƒ¼ã‚¸ã§æœ€æ–°ã® posts ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã«ã€:with ã¨ :as ã‚’ä½¿ã£ã¦ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã‚’æå†™ã—ã¾ã™ã€‚
 
     partial :post, :with => @posts, :as => post

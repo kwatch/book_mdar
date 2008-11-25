@@ -125,37 +125,37 @@
 #### Freezing Gems
 As Merb is spilt up into various gems, and it's hard to keep update with each one it's a good idea to freeze them into your application, so an update to one gem doesn't break your app.
 
-Merb ¤ÏÊ£¿ô¤Î gems ¤ËÊ¬¤«¤ì¤Æ¤ª¤ê¡¢¤½¤ì¤¾¤ì¤ò¹¹¿·¤·Â³¤±¤ë¤Î¤Ïº¤Æñ¤Ç¤¹¡£
-¤½¤Î¤¿¤á¡¢¤½¤ì¤é¤ò¼«Ê¬¤Î¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤ËÅà·ë (freeze) ¤¹¤ë¤Î¤Ï¤¤¤¤¹Í¤¨¤Ç¤¹¡£
+Merb ã¯è¤‡æ•°ã® gems ã«åˆ†ã‹ã‚Œã¦ãŠã‚Šã€ãã‚Œãã‚Œã‚’æ›´æ–°ã—ç¶šã‘ã‚‹ã®ã¯å›°é›£ã§ã™ã€‚
+ãã®ãŸã‚ã€ãã‚Œã‚‰ã‚’è‡ªåˆ†ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã«å‡çµ (freeze) ã™ã‚‹ã®ã¯ã„ã„è€ƒãˆã§ã™ã€‚
 
 The easiest way to freeze a gem is to add -i gems as a command line option to specify the location for the installed gem. And then add the gem as a dependency in your `init.rb`.
 
-Gem ¤òÅà·ë¤¹¤ë¤Î¤ËºÇ¤â´ÊÃ±¤ÊÊıË¡¤Ï¡¢-i gems ¤ò¥³¥Ş¥ó¥É¥é¥¤¥ó¥ª¥×¥·¥ç¥ó¤È¤·¤ÆÉÕ¤±¤Æ¡¢¥¤¥ó¥¹¥È¡¼¥ëºÑ¤ß¤Î gem ¤Î¾ì½ê¤ò»ØÄê¤¹¤ë¤³¤È¤Ç¤¹¡£¤½¤ì¤«¤é `init.rb` ¤ÎÃæ¤Ç gem ¤ò°ÍÂ¸Êª¤È¤·¤ÆÄÉ²Ã¤·¤Ş¤¹¡£
+Gem ã‚’å‡çµã™ã‚‹ã®ã«æœ€ã‚‚ç°¡å˜ãªæ–¹æ³•ã¯ã€-i gems ã‚’ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¨ã—ã¦ä»˜ã‘ã¦ã€ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ¸ˆã¿ã® gem ã®å ´æ‰€ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã§ã™ã€‚ãã‚Œã‹ã‚‰ `init.rb` ã®ä¸­ã§ gem ã‚’ä¾å­˜ç‰©ã¨ã—ã¦è¿½åŠ ã—ã¾ã™ã€‚
 
     gem install aquarium -i gems
 
 When running this command from the root of your merb application, it will install the gem inside the gem directory
 
-Merb ¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤Î¥ë¡¼¥È¥Ç¥£¥ì¥¯¥È¥ê¤Ç¤³¤Î¥³¥Ş¥ó¥É¤ò¼Â¹Ô¤¹¤ë¤È¡¢gem ¥Ç¥£¥ì¥¯¥È¥ê¤ÎÃæ¤Ë gem ¤¬¥¤¥ó¥¹¥È¡¼¥ë¤µ¤ì¤Ş¤¹¡£¡ÌÌõÃí: "gems" ¥Ç¥£¥ì¥¯¥È¥ê¤Î´Ö°ã¤¤?¡Í
+Merb ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ«ãƒ¼ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã§ã“ã®ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹ã¨ã€gem ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ä¸­ã« gem ãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¾ã™ã€‚ã€”è¨³æ³¨: "gems" ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®é–“é•ã„?ã€•
 
 If you want to freeze the version of the gem that you have installed which is from trunk, you'll need to find where your gems are located and pass that parameter to the gem install command.
 
-¡ÌÌõÃí: Git ¥ê¥İ¥¸¥È¥ê¤Î¡Ítrunk ¤«¤é¥¤¥ó¥¹¥È¡¼¥ë¤·¤¿ gem ¤Î¥Ğ¡¼¥¸¥ç¥ó¤òÅà·ë¤·¤¿¤¤¾ì¹ç¡¢¼«Ê¬¤Î gems ¤¬¤É¤³¤Ë¤¢¤ë¤Î¤«¤òÄ´¤Ù¡¢¤½¤ì¤ò gem install ¥³¥Ş¥ó¥É¤Î¥Ñ¥é¥á¡¼¥¿¤ËÅÏ¤·¤Æ¤ä¤ê¤Ş¤¹¡£
+ã€”è¨³æ³¨: Git ãƒªãƒã‚¸ãƒˆãƒªã®ã€•trunk ã‹ã‚‰ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãŸ gem ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’å‡çµã—ãŸã„å ´åˆã€è‡ªåˆ†ã® gems ãŒã©ã“ã«ã‚ã‚‹ã®ã‹ã‚’èª¿ã¹ã€ãã‚Œã‚’ gem install ã‚³ãƒãƒ³ãƒ‰ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«æ¸¡ã—ã¦ã‚„ã‚Šã¾ã™ã€‚
 
     gem environment gemdir
     
 As I have installed Ruby via port my gem folder is located at `/opt/local/lib/ruby/gems/1.8`.
 To freeze the `aquarium` gem I have from trunk I would need to run:
 
-É®¼Ô¤Î¾ì¹ç¡¢port¡ÌÌõÃí: MacPorts ¤Î¤³¤È¡Í¤Ç Ruby ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤¿¤Î¤Ç¡¢gem ¥Õ¥©¥ë¥À¤Ï `/opt/local/lib/ruby/gems/1.8` ¤Ë¤Ê¤Ã¤Æ¤¤¤Ş¤¹¡£
-¤¿¤È¤¨¤Ğ trunk ¤«¤é»ı¤Ã¤Æ¤­¤¿ `aquarium` gem ¤òÅà·ë¤·¤¿¤¤¤È¤­¤Ï¡¢¼¡¤ò¼Â¹Ô¤¹¤ëÉ¬Í×¤¬¤¢¤ë¤Ç¤·¤ç¤¦:
+ç­†è€…ã®å ´åˆã€portã€”è¨³æ³¨: MacPorts ã®ã“ã¨ã€•ã§ Ruby ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãŸã®ã§ã€gem ãƒ•ã‚©ãƒ«ãƒ€ã¯ `/opt/local/lib/ruby/gems/1.8` ã«ãªã£ã¦ã„ã¾ã™ã€‚
+ãŸã¨ãˆã° trunk ã‹ã‚‰æŒã£ã¦ããŸ `aquarium` gem ã‚’å‡çµã—ãŸã„ã¨ãã¯ã€æ¬¡ã‚’å®Ÿè¡Œã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã§ã—ã‚‡ã†:
 
     gem install /opt/local/lib/ruby/gems/1.8/cache/aquarium-0.4.1/ -i gems
 
 If you want to freeze merb itself you need to add this to your `init.rb`, then run the following:
 
-Merb ¤½¤ì¼«ÂÎ¤òÅà·ë¤·¤¿¤¤¾ì¹ç¤Ï¡¢¼¡¡ÌÌõÃí: "require 'merb-freezer'" ¤Î¤³¤È¡Í¤ò `init.rb` ¤ËÄÉ²Ã¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Ş¤¹¡£
-¤Ş¤¿¤½¤Î¤¢¤È¡¢¼¡¡ÌÌõÃí: ¤Î rake ¥³¥Ş¥ó¥É¡Í¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤¡£
+Merb ãã‚Œè‡ªä½“ã‚’å‡çµã—ãŸã„å ´åˆã¯ã€æ¬¡ã€”è¨³æ³¨: "require 'merb-freezer'" ã®ã“ã¨ã€•ã‚’ `init.rb` ã«è¿½åŠ ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
+ã¾ãŸãã®ã‚ã¨ã€æ¬¡ã€”è¨³æ³¨: ã® rake ã‚³ãƒãƒ³ãƒ‰ã€•ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
 
 	require 'merb-freezer'
 	
@@ -165,8 +165,8 @@ Merb ¤½¤ì¼«ÂÎ¤òÅà·ë¤·¤¿¤¤¾ì¹ç¤Ï¡¢¼¡¡ÌÌõÃí: "require 'merb-freezer'" ¤Î¤³¤È¡Í¤ò `
 	 
 Once the `merb` gem is frozen, you can run merb with `frozen-merb`. If you want to update your frozen gem version, pass the update parameter to the rake task:
 
-¤¤¤Ã¤¿¤ó `merb` gem ¤¬Åà·ë¤µ¤ì¤¿¤¢¤È¤Ï¡¢`frozen-merb` ¥³¥Ş¥ó¥É¤Ç merb ¤ò¼Â¹Ô¤·¤Ş¤¹¡£
-Åà·ë¤·¤¿ gem ¤Î¥Ğ¡¼¥¸¥ç¥ó¤ò¹¹¿·¤·¤¿¤¤¤È¤­¤Ï¡¢¹¹¿·¤Î¤¿¤á¤Î¥Ñ¥é¥á¡¼¥¿¤ò rake ¥¿¥¹¥¯¤ËÅÏ¤·¤Æ¤ä¤ê¤Ş¤¹:
+ã„ã£ãŸã‚“ `merb` gem ãŒå‡çµã•ã‚ŒãŸã‚ã¨ã¯ã€`frozen-merb` ã‚³ãƒãƒ³ãƒ‰ã§ merb ã‚’å®Ÿè¡Œã—ã¾ã™ã€‚
+å‡çµã—ãŸ gem ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’æ›´æ–°ã—ãŸã„ã¨ãã¯ã€æ›´æ–°ã®ãŸã‚ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ rake ã‚¿ã‚¹ã‚¯ã«æ¸¡ã—ã¦ã‚„ã‚Šã¾ã™:
 
 	rake freeze:core UPDATE=true
 

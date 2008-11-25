@@ -2,7 +2,7 @@
 
 Routing in Merb is similar to Rails, if you take a look at your `router.rb` file
 
-¼«Ê¬¤Î `router.rb` ¥Õ¥¡¥ë¤ò¸«¤ì¤Ğ¤ï¤«¤ê¤Ş¤¹¤¬¡¢Merb ¤Ë¤ª¤±¤ë¥ë¡¼¥Æ¥£¥ó¥°¤¬ Rails ¤Î¤½¤ì¤È»÷¤Æ¤¤¤Ş¤¹¡£
+è‡ªåˆ†ã® `router.rb` ãƒ•ã‚¡ãƒ«ã‚’è¦‹ã‚Œã°ã‚ã‹ã‚Šã¾ã™ãŒã€Merb ã«ãŠã‘ã‚‹ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ãŒ Rails ã®ãã‚Œã¨ä¼¼ã¦ã„ã¾ã™ã€‚
 
 
 ### Strings/Regex

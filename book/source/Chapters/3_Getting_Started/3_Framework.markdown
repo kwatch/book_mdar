@@ -1,11 +1,11 @@
-## The Framework (¥Õ¥ì¡¼¥à¥ï¡¼¥¯)
+## The Framework (ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯)
 
 The directory structure of the project created should look like the following. 
 We'll give brief overview of the framework here and go into further details of 
 each component in subsequent chapters.
 
-ºîÀ®¤µ¤ì¤¿¥×¥í¥¸¥§¥¯¥È¤Î¥Ç¥£¥ì¥¯¥È¥ê¹½Â¤¤Ï¡¢¼¡¤Î¤è¤¦¤Ë¤Ê¤Ã¤Æ¤¤¤Ş¤¹¡£
-¤³¤³¤Ç¤Ï¥Õ¥ì¡¼¥à¥ï¡¼¥¯¤Î´ÊÃ±¤Ê³µÍ×¤òÀâÌÀ¤·¡¢¼¡Àá°Ê¹ß¤Ç³Æ¥³¥ó¥İ¡¼¥Í¥ó¥È¤Î¾ÜºÙ¤òÀâÌÀ¤·¤Ş¤¹¡£
+ä½œæˆã•ã‚ŒãŸãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªæ§‹é€ ã¯ã€æ¬¡ã®ã‚ˆã†ã«ãªã£ã¦ã„ã¾ã™ã€‚
+ã“ã“ã§ã¯ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã®ç°¡å˜ãªæ¦‚è¦ã‚’èª¬æ˜ã—ã€æ¬¡ç¯€ä»¥é™ã§å„ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®è©³ç´°ã‚’èª¬æ˜ã—ã¾ã™ã€‚
 
 	test
 	  |--> app
@@ -19,15 +19,15 @@ The `app` folder contains your models, views, controllers and helpers. It also
 has Parts, they inherit from `AbstractController` and similar to the old Rails 
 components, but are lightweight and are useful for sidebars, widgets etc. 
 
-`app` ¥Õ¥©¥ë¥À¤Î²¼¤Ë¡¢models¡¢views¡¢controllers¡¢helpers¡ÌÌõÃí: ¤Î³Æ¥Õ¥©¥ë¥À¡Í¤¬¤¢¤ê¤Ş¤¹¡£
-¤Ş¤¿ `app` ¥Õ¥©¥ë¥À¤Ï Parts ¤â´Ş¤ó¤Ç¤¤¤Ş¤¹¡£
-¤³¤ì¤Ï `AbstractController` ¤ò·Ñ¾µ¤·¤Æ¤ª¤ê¡¢¸Å¤¤ Rails ¥³¥ó¥İ¡¼¥Í¥ó¥È¤Ë»÷¤Æ¤¤¤Ş¤¹¤¬¡¢·ÚÎÌ¤Ç¡¢¥µ¥¤¥É¥Ğ¡¼¤ä¥¦¥£¥¸¥Ã¥È¤Ê¤É¤ËÌòÎ©¤Á¤Ş¤¹¡£
+`app` ãƒ•ã‚©ãƒ«ãƒ€ã®ä¸‹ã«ã€modelsã€viewsã€controllersã€helpersã€”è¨³æ³¨: ã®å„ãƒ•ã‚©ãƒ«ãƒ€ã€•ãŒã‚ã‚Šã¾ã™ã€‚
+ã¾ãŸ `app` ãƒ•ã‚©ãƒ«ãƒ€ã¯ Parts ã‚‚å«ã‚“ã§ã„ã¾ã™ã€‚
+ã“ã‚Œã¯ `AbstractController` ã‚’ç¶™æ‰¿ã—ã¦ãŠã‚Šã€å¤ã„ Rails ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã«ä¼¼ã¦ã„ã¾ã™ãŒã€è»½é‡ã§ã€ã‚µã‚¤ãƒ‰ãƒãƒ¼ã‚„ã‚¦ã‚£ã‚¸ãƒƒãƒˆãªã©ã«å½¹ç«‹ã¡ã¾ã™ã€‚
 
 `Mailers`, which also inherit from the `AbstractController` have their own 
 folder where the controllers and views live. 
 
-`Mailers` ¤â¤Ş¤¿ `AbstractController` ¤ò·Ñ¾µ¤·¤Æ¤¤¤Ş¤¹¡£
-`Mailers` ¤Ï¼«¿È¤Î¥Õ¥©¥ë¥À¤ò»ı¤Ã¤Æ¤ª¤ê¡¢¥³¥ó¥È¥í¡¼¥é¤È¥Ó¥å¡¼¤ò¤½¤³¤ËÃÖ¤¤¤Æ¤¤¤Ş¤¹¡£
+`Mailers` ã‚‚ã¾ãŸ `AbstractController` ã‚’ç¶™æ‰¿ã—ã¦ã„ã¾ã™ã€‚
+`Mailers` ã¯è‡ªèº«ã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’æŒã£ã¦ãŠã‚Šã€ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã¨ãƒ“ãƒ¥ãƒ¼ã‚’ãã“ã«ç½®ã„ã¦ã„ã¾ã™ã€‚
 
 	app
 	  |--> controllers
@@ -43,23 +43,23 @@ The `config` folder has all the configuration files and environments. It's
 important to edit the `init.rb` and `database.yml` files in here before 
 running Merb. 
 
-`config` ¥Õ¥©¥ë¥À¤Ë¤Ï¡¢ÀßÄê¹½À®¥Õ¥¡¥¤¥ë¤È´Ä¶­¤Î¤¹¤Ù¤Æ¤¬¼ı¤á¤é¤ì¤Æ¤¤¤Ş¤¹¡£
-¤³¤Î¤¦¤Á¡¢`init.rb` ¤È `database.yml` ¤Î¥Õ¥¡¥¤¥ë¤Ï Merb ¤òµ¯Æ°¤¹¤ëÁ°¤ËÊÔ½¸¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Ş¤¹¡£
-<!-- Merb ¤òµ¯Æ°¤¹¤ëÁ°¤Ë¡¢¤³¤³¤Ë¤¢¤ë `init.rb` ¤È `database.yml` ¤Î¥Õ¥¡¥¤¥ë¤òÊÔ½¸¤¹¤ë¤³¤È¤Ï½ÅÍ×¤Ç¤¹¡£ -->
+`config` ãƒ•ã‚©ãƒ«ãƒ€ã«ã¯ã€è¨­å®šæ§‹æˆãƒ•ã‚¡ã‚¤ãƒ«ã¨ç’°å¢ƒã®ã™ã¹ã¦ãŒåã‚ã‚‰ã‚Œã¦ã„ã¾ã™ã€‚
+ã“ã®ã†ã¡ã€`init.rb` ã¨ `database.yml` ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ Merb ã‚’èµ·å‹•ã™ã‚‹å‰ã«ç·¨é›†ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
+<!-- Merb ã‚’èµ·å‹•ã™ã‚‹å‰ã«ã€ã“ã“ã«ã‚ã‚‹ `init.rb` ã¨ `database.yml` ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç·¨é›†ã™ã‚‹ã“ã¨ã¯é‡è¦ã§ã™ã€‚ -->
 
 The Merb router, which maps the incoming requests to the controllers is also 
 here. The `rack.rb` file is the rack handler and you can pass options to 
 `merb -a` to change rack adapter.
 
-Merb ¤Î¥ë¡¼¥¿¤Ï¡¢¼õ¿®¤·¤¿¥ê¥¯¥¨¥¹¥È¤ò¥³¥ó¥È¥í¡¼¥é¤ËÂĞ±ş¤Å¤±¤ëÌòÌÜ¤ò»ı¤Ã¤Æ¤¤¤Ş¤¹¤¬¡¢¤½¤ì¤â¤³¤³¤Ë¤¢¤ê¤Ş¤¹¡£
-`rack.rb` ¥Õ¥¡¥¤¥ë¤Ï Rack ¥Ï¥ó¥É¥é¤Ç¤¢¤ê¡¢`merb -a` ¤Ë¥ª¥×¥·¥ç¥ó¤òÅÏ¤·¤Æ Rack ¥¢¥À¥×¥¿¤òÊÑ¹¹¤¹¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+Merb ã®ãƒ«ãƒ¼ã‚¿ã¯ã€å—ä¿¡ã—ãŸãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã«å¯¾å¿œã¥ã‘ã‚‹å½¹ç›®ã‚’æŒã£ã¦ã„ã¾ã™ãŒã€ãã‚Œã‚‚ã“ã“ã«ã‚ã‚Šã¾ã™ã€‚
+`rack.rb` ãƒ•ã‚¡ã‚¤ãƒ«ã¯ Rack ãƒãƒ³ãƒ‰ãƒ©ã§ã‚ã‚Šã€`merb -a` ã«ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æ¸¡ã—ã¦ Rack ã‚¢ãƒ€ãƒ—ã‚¿ã‚’å¤‰æ›´ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
 
 	config
 	  `--> environments
 
 RSpec specs can be found in the spec folder.
 
-RSpec ¤Ë¤è¤ë»ÅÍÍ (¥¹¥Ú¥Ã¥¯) ¤Ï¡¢spec ¥Õ¥©¥ë¥À¤ËÃÖ¤«¤ì¤Ş¤¹¡£
+RSpec ã«ã‚ˆã‚‹ä»•æ§˜ (ã‚¹ãƒšãƒƒã‚¯) ã¯ã€spec ãƒ•ã‚©ãƒ«ãƒ€ã«ç½®ã‹ã‚Œã¾ã™ã€‚
 
 	spec
 	
@@ -67,4 +67,4 @@ In addition to these folders you can have a `gem` directory, which stores
 frozen gems (see Freezing Gems for more info), and a `lib` folder to store 
 other ruby files.
 
-¤³¤ì¤é¤Î¥Õ¥©¥ë¥À¤Ë²Ã¤¨¡¢Åà·ë¤·¤¿ gems (¾ÜºÙ¤Ï¡ØGems ¤òÅà·ë¤¹¤ë¡Ù¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤) ¤òÃÖ¤¯¤¿¤á¤Î `gem` ¥Ç¥£¥ì¥¯¥È¥ê¤ä¡¢Â¾¤Î Ruby ¥Õ¥¡¥¤¥ë¤òÃÖ¤¯¤¿¤á¤Î `lib` ¥Õ¥©¥ë¥À¤ò»ı¤Ä¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+ã“ã‚Œã‚‰ã®ãƒ•ã‚©ãƒ«ãƒ€ã«åŠ ãˆã€å‡çµã—ãŸ gems (è©³ç´°ã¯ã€Gems ã‚’å‡çµã™ã‚‹ã€ã‚’å‚ç…§ã—ã¦ãã ã•ã„) ã‚’ç½®ããŸã‚ã® `gem` ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚„ã€ä»–ã® Ruby ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç½®ããŸã‚ã® `lib` ãƒ•ã‚©ãƒ«ãƒ€ã‚’æŒã¤ã“ã¨ãŒã§ãã¾ã™ã€‚

@@ -1,37 +1,37 @@
-## Creating an App (¥¢¥×¥ê¤òºî¤Ã¤Æ¤ß¤ë)
+## Creating an App (ã‚¢ãƒ—ãƒªã‚’ä½œã£ã¦ã¿ã‚‹)
 
 One of the best ways to become familiar with a framework is to jump in and get 
 your hands dirty.  So now that we've got everything installed, it's time to roll 
 up your sleeves and create a test Merb application. 
 
-¥Õ¥ì¡¼¥à¥ï¡¼¥¯¤Ë´·¤ì¤ëºÇ¤â¤è¤¤ÊıË¡¤Î¤Ò¤È¤Ä¤Ï¡¢¼«Ê¬¤Î¼ê¤Ç¼Âºİ¤Ë»î¤·¤Æ¤ß¤ë¤³¤È¤Ç¤¹¡£
-É¬Í×¤Ê¤â¤Î¤Ï¤¹¤Ù¤Æ¥¤¥ó¥¹¥È¡¼¥ë¤·¤¿¤Ï¤º¤Ç¤¹¤Î¤Ç¡¢Âµ¤ò¤Ş¤¯¤Ã¤Æ Merb ¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤ò¤Ò¤È¤Äºî¤Ã¤Æ¤ß¤Ş¤·¤ç¤¦¡£
+ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã«æ…£ã‚Œã‚‹æœ€ã‚‚ã‚ˆã„æ–¹æ³•ã®ã²ã¨ã¤ã¯ã€è‡ªåˆ†ã®æ‰‹ã§å®Ÿéš›ã«è©¦ã—ã¦ã¿ã‚‹ã“ã¨ã§ã™ã€‚
+å¿…è¦ãªã‚‚ã®ã¯ã™ã¹ã¦ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãŸã¯ãšã§ã™ã®ã§ã€è¢–ã‚’ã¾ãã£ã¦ Merb ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ã²ã¨ã¤ä½œã£ã¦ã¿ã¾ã—ã‚‡ã†ã€‚
 
 Merb-more comes with a `gem` called `merb-gen`, this gives you a command line 
 tool by the same name which is used for all of your generator needs. You can 
 think of it as `script/generate`. Running `merb-gen` from the command line with 
 no arguments will show you all of the generators that are available.
 
-Merb-more ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¤È¡¢`merb-gen` ¤È¤¤¤¦ gem ¤â¥¤¥ó¥¹¥È¡¼¥ë¤µ¤ì¤Ş¤¹¡£
-¤³¤Î gem ¤Ï¡¢¥¸¥§¥Í¥ì¡¼¥¿¤È¤·¤ÆÉ¬Í×¤Ê¤â¤Î¤ò¤¹¤Ù¤ÆÈ÷¤¨¤¿¡¢Æ±Ì¾¤Î¥³¥Ş¥ó¥É¥é¥¤¥ó¥Ä¡¼¥ë¤òÄó¶¡¤·¤Ş¤¹¡£
-¤Á¤ç¤¦¤É¡ÌÌõÃí: Ruby on Rails ¤Ë¤ª¤±¤ë¡Í `script/generate` ¤Î¤è¤¦¤Ê¤â¤Î¤À¤È»×¤Ã¤Æ¤¯¤À¤µ¤¤¡£
-¥³¥Ş¥ó¥É¥é¥¤¥ó¤«¤é `merb-gen` ¤ò°ú¿ô¤Ê¤·¤Ç¼Â¹Ô¤¹¤ë¤È¡¢ÍøÍÑ²ÄÇ½¤Ê¤¹¤Ù¤Æ¤Î¥¸¥§¥Í¥ì¡¼¥¿¤¬É½¼¨¤µ¤ì¤Ş¤¹¡£
+Merb-more ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã¨ã€`merb-gen` ã¨ã„ã† gem ã‚‚ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¾ã™ã€‚
+ã“ã® gem ã¯ã€ã‚¸ã‚§ãƒãƒ¬ãƒ¼ã‚¿ã¨ã—ã¦å¿…è¦ãªã‚‚ã®ã‚’ã™ã¹ã¦å‚™ãˆãŸã€åŒåã®ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ãƒ„ãƒ¼ãƒ«ã‚’æä¾›ã—ã¾ã™ã€‚
+ã¡ã‚‡ã†ã©ã€”è¨³æ³¨: Ruby on Rails ã«ãŠã‘ã‚‹ã€• `script/generate` ã®ã‚ˆã†ãªã‚‚ã®ã ã¨æ€ã£ã¦ãã ã•ã„ã€‚
+ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‹ã‚‰ `merb-gen` ã‚’å¼•æ•°ãªã—ã§å®Ÿè¡Œã™ã‚‹ã¨ã€åˆ©ç”¨å¯èƒ½ãªã™ã¹ã¦ã®ã‚¸ã‚§ãƒãƒ¬ãƒ¼ã‚¿ãŒè¡¨ç¤ºã•ã‚Œã¾ã™ã€‚
 
 Merb follows the same naming convention for projects as rails, so 
 'my\_test\_app' and 'Test2' are valid names but 'T 3' is not (they need to be 
 valid SQL table names).
 
-¥×¥í¥¸¥§¥¯¥È¤Ç¤Ï¡¢Merb ¤Ï Rails ¤ÈÆ±¤¸Ì¿Ì¾µ¬Ìó¤ËÂ§¤Ã¤Æ¤¤¤Ş¤¹¡£
-¤¿¤È¤¨¤Ğ 'my\_test\_app' ¤ä 'Test2' ¤ÏÍ­¸ú¤ÊÌ¾Á°¤Ç¤¹¤¬¡¢'T 3' ¤Ï¤½¤¦¤Ç¤Ï¤¢¤ê¤Ş¤»¤ó (¤³¤ì¤é¤Ï SQL ¤Ë¤ª¤¤¤ÆÍ­¸ú¤Ê¥Æ¡¼¥Ö¥ëÌ¾¤Ç¤¢¤ëÉ¬Í×¤¬¤¢¤ê¤Ş¤¹)¡£
+ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã§ã¯ã€Merb ã¯ Rails ã¨åŒã˜å‘½åè¦ç´„ã«å‰‡ã£ã¦ã„ã¾ã™ã€‚
+ãŸã¨ãˆã° 'my\_test\_app' ã‚„ 'Test2' ã¯æœ‰åŠ¹ãªåå‰ã§ã™ãŒã€'T 3' ã¯ãã†ã§ã¯ã‚ã‚Šã¾ã›ã‚“ (ã“ã‚Œã‚‰ã¯ SQL ã«ãŠã„ã¦æœ‰åŠ¹ãªãƒ†ãƒ¼ãƒ–ãƒ«åã§ã‚ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™)ã€‚
 
     merb-gen app test
     
 This will generate an empty Merb app, so lets go in and take a look. You'll 
 notice that the directory structure is similar to Rails, with a few differences.
 
-¤³¤Î¥³¥Ş¥ó¥É¤ò¼Â¹Ô¤¹¤ë¤È¡¢¶õ¤Î Merb ¥¢¥×¥ê¤¬ºîÀ®¤µ¤ì¤Ş¤¹¡£
-Ãæ¤ò¼«Í³¤Ë¸«¤Æ¤ß¤Æ¤¯¤À¤µ¤¤¡£
-2¡¢3 ¤Î°ã¤¤¤Ï¤¢¤ë¤â¤Î¤Î¡¢¥Ç¥£¥ì¥¯¥È¥ê¹½Â¤¤Ï Rails ¤Ë¤è¤¯»÷¤Æ¤¤¤ë¤³¤È¤¬¤ï¤«¤ë¤Ç¤·¤ç¤¦¡£
+ã“ã®ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹ã¨ã€ç©ºã® Merb ã‚¢ãƒ—ãƒªãŒä½œæˆã•ã‚Œã¾ã™ã€‚
+ä¸­ã‚’è‡ªç”±ã«è¦‹ã¦ã¿ã¦ãã ã•ã„ã€‚
+2ã€3 ã®é•ã„ã¯ã‚ã‚‹ã‚‚ã®ã®ã€ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªæ§‹é€ ã¯ Rails ã«ã‚ˆãä¼¼ã¦ã„ã‚‹ã“ã¨ãŒã‚ã‹ã‚‹ã§ã—ã‚‡ã†ã€‚
 
     # expected output
     RubiGen::Scripts::Generate
@@ -75,14 +75,14 @@ notice that the directory structure is similar to Rails, with a few differences.
       create  /Rakefile
 
 
-### Configuring Merb (Merb ¤ÎÀßÄê¹½À®)
+### Configuring Merb (Merb ã®è¨­å®šæ§‹æˆ)
 
 Before we get the server running, you'll need to edit the `init.rb` file and 
 un-comment the following line (this is only necessary if you need to connect 
 to a database, which we do in our case):
 
-¥µ¡¼¥Ğ¤òµ¯Æ°¤¹¤ëÁ°¤Ë¡¢`init.rb` ¥Õ¥¡¥¤¥ë¤òÊÔ½¸¤·¤Æ¼¡¤Î¹Ô¤Î¥³¥á¥ó¥È¤ò³°¤¹É¬Í×¤¬¤¢¤ê¤Ş¤¹
-(¤³¤ì¤Ï¥Ç¡¼¥¿¥Ù¡¼¥¹¤ËÀÜÂ³¤¹¤ë¾ì¹ç¤Î¤ßÉ¬Í×¤Ç¤¹¡£ËÜ¹Æ¤Ç¤â¥Ç¡¼¥¿¥Ù¡¼¥¹¤ËÀÜÂ³¤¹¤ë¤Î¤ÇÉ¬Í×¤È¤Ê¤ê¤Ş¤¹)¡£
+ã‚µãƒ¼ãƒã‚’èµ·å‹•ã™ã‚‹å‰ã«ã€`init.rb` ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç·¨é›†ã—ã¦æ¬¡ã®è¡Œã®ã‚³ãƒ¡ãƒ³ãƒˆã‚’å¤–ã™å¿…è¦ãŒã‚ã‚Šã¾ã™
+(ã“ã‚Œã¯ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«æ¥ç¶šã™ã‚‹å ´åˆã®ã¿å¿…è¦ã§ã™ã€‚æœ¬ç¨¿ã§ã‚‚ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«æ¥ç¶šã™ã‚‹ã®ã§å¿…è¦ã¨ãªã‚Šã¾ã™)ã€‚
 
 `config/init.rb`
 
@@ -90,7 +90,7 @@ to a database, which we do in our case):
     
 Typing `merb` now in your command line will start the server.
 
-¤³¤³¤Ş¤Ç¤­¤¿¤é¡¢¥³¥Ş¥ó¥É¥é¥¤¥ó¤Ç `merb` ¤È¥¿¥¤¥×¤¹¤ì¤Ğ¥µ¡¼¥Ğ¤¬µ¯Æ°¤µ¤ì¤Ş¤¹¡£
+ã“ã“ã¾ã§ããŸã‚‰ã€ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã§ `merb` ã¨ã‚¿ã‚¤ãƒ—ã™ã‚Œã°ã‚µãƒ¼ãƒãŒèµ·å‹•ã•ã‚Œã¾ã™ã€‚
 
     Loaded DEVELOPMENT Environment...
     No database.yml file found in /Users/work/merb/example_one/config, assuming database connection(s) established in the environment file in /Users/work/merb/example_one/config/environments
@@ -102,8 +102,8 @@ Typing `merb` now in your command line will start the server.
 As you can see, however, we did not yet configure the database. Let's create the
 database.yml file that merb is looking for:
 
-¤·¤«¤·¸«¤Æ¤ÎÄÌ¤ê¡¢¥Ç¡¼¥¿¥Ù¡¼¥¹¤ÎÀßÄê¹½À®¤ò¤Ş¤À¤·¤Æ¤¤¤Ş¤»¤ó¤Ç¤·¤¿¡£
-Merb ¤¬Ãµ¤·¤Æ¤¤¤ë database.yml ¤È¤¤¤¦¥Õ¥¡¥¤¥ë¤òºîÀ®¤·¤Ş¤·¤ç¤¦:
+ã—ã‹ã—è¦‹ã¦ã®é€šã‚Šã€ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®è¨­å®šæ§‹æˆã‚’ã¾ã ã—ã¦ã„ã¾ã›ã‚“ã§ã—ãŸã€‚
+Merb ãŒæ¢ã—ã¦ã„ã‚‹ database.yml ã¨ã„ã†ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã—ã¾ã—ã‚‡ã†:
 
 `config/database.yml`
 
@@ -119,44 +119,44 @@ Merb ¤¬Ãµ¤·¤Æ¤¤¤ë database.yml ¤È¤¤¤¦¥Õ¥¡¥¤¥ë¤òºîÀ®¤·¤Ş¤·¤ç¤¦:
 Don't forget to specify your socket, if you do not know it's location, you 
 can find it by typing:
 
-¥½¥±¥Ã¥È¤ò»ØÄê¤¹¤ë¤Î¤òËº¤ì¤Ê¤¤¤è¤¦¤Ë¤·¤Æ¤¯¤À¤µ¤¤¡£
-¤â¤·¥½¥±¥Ã¥È¤¬¤É¤³¤Ë¤¢¤ë¤Î¤«¤ï¤«¤é¤Ê¤¤¾ì¹ç¤Ï¡¢¼¡¤ÎÊıË¡¤ÇÃµ¤¹¤³¤È¤¬¤Ç¤­¤Ş¤¹:
+ã‚½ã‚±ãƒƒãƒˆã‚’æŒ‡å®šã™ã‚‹ã®ã‚’å¿˜ã‚Œãªã„ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚
+ã‚‚ã—ã‚½ã‚±ãƒƒãƒˆãŒã©ã“ã«ã‚ã‚‹ã®ã‹ã‚ã‹ã‚‰ãªã„å ´åˆã¯ã€æ¬¡ã®æ–¹æ³•ã§æ¢ã™ã“ã¨ãŒã§ãã¾ã™:
 
     mysql_config --socket
 
 Starting Merb again shows that everything is running okay.
 
-ºÆÅÙ Merb ¤òµ¯Æ°¤¹¤ë¤È¡¢¤¹¤Ù¤Æ¤¬½çÄ´¤ËÆ°¤­¤Ş¤¹¡£
+å†åº¦ Merb ã‚’èµ·å‹•ã™ã‚‹ã¨ã€ã™ã¹ã¦ãŒé †èª¿ã«å‹•ãã¾ã™ã€‚
 
 The following command will give you access to the Merb interactive console:
 
-¼¡¤Î¥³¥Ş¥ó¥É¤ò»È¤¦¤È¡¢Merb ¤Î¥¤¥ó¥¿¥é¥¯¥Æ¥£¥Ö¥³¥ó¥½¡¼¥ë¤Ë¥¢¥¯¥»¥¹¤Ç¤­¤Ş¤¹:
+æ¬¡ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ã†ã¨ã€Merb ã®ã‚¤ãƒ³ã‚¿ãƒ©ã‚¯ãƒ†ã‚£ãƒ–ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã«ã‚¢ã‚¯ã‚»ã‚¹ã§ãã¾ã™:
 
     merb -i
 
 You'll notice Merb runs on port 4000, but this can be changed with flag 
 `-p [port number]`. More options can be found by typing:
 
-Merb ¤Ï¥İ¡¼¥È 4000 ÈÖ¤Ç¼Â¹Ô¤µ¤ì¤Ş¤¹¤¬¡¢`-p [port number]` ¥Õ¥é¥°¤ò»È¤¨¤ĞÊÑ¹¹¤Ç¤­¤Ş¤¹¡£
-¥ª¥×¥·¥ç¥ó¤Î¾ÜºÙ¤Ë¤Ä¤¤¤Æ¤Ï°Ê²¼¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤:
+Merb ã¯ãƒãƒ¼ãƒˆ 4000 ç•ªã§å®Ÿè¡Œã•ã‚Œã¾ã™ãŒã€`-p [port number]` ãƒ•ãƒ©ã‚°ã‚’ä½¿ãˆã°å¤‰æ›´ã§ãã¾ã™ã€‚
+ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®è©³ç´°ã«ã¤ã„ã¦ã¯ä»¥ä¸‹ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„:
 
     merb --help
     
 You can even run Merb with any application server that supports rack 
 (thin, evented_mongrel, fcgi, mongrel, and webrick):
 
-Merb ¤Ï¡¢Rack ¤¬¥µ¥İ¡¼¥È¤µ¤ì¤Æ¤¤¤ì¤Ğ¤É¤Î¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¥µ¡¼¥Ğ¾å¤Ç¤âÆ°ºî¤·¤Ş¤¹
-(thin¡¢evented_mongrel¡¢fcgi¡¢mongrel¡¢webrick ¤Ê¤É)¡£
+Merb ã¯ã€Rack ãŒã‚µãƒãƒ¼ãƒˆã•ã‚Œã¦ã„ã‚Œã°ã©ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚µãƒ¼ãƒä¸Šã§ã‚‚å‹•ä½œã—ã¾ã™
+(thinã€evented_mongrelã€fcgiã€mongrelã€webrick ãªã©)ã€‚
 
     merb -a thin
 
 If you see a 500 error with the following error message when trying to navigate
 to localhost:4000 in your browser:
 
-¥Ö¥é¥¦¥¶¤Ç localhost:400 ¤Ë¥¢¥¯¥»¥¹¤·¤¿¤È¤­¤Ë¡¢¤â¤· 500 ¥¨¥é¡¼¤¬È¯À¸¤·¤Æ°Ê²¼¤Î¤è¤¦¤Ê¥¨¥é¡¼¥á¥Ã¥»¡¼¥¸¤¬É½¼¨¤µ¤ì¤¿¤é:
+ãƒ–ãƒ©ã‚¦ã‚¶ã§ localhost:400 ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ãŸã¨ãã«ã€ã‚‚ã— 500 ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¦ä»¥ä¸‹ã®ã‚ˆã†ãªã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒè¡¨ç¤ºã•ã‚ŒãŸã‚‰:
     
     undefined method `match' for Merb::Router:Class - (NoMethodError)
 
 This means Merb has been started outside of your applications root directory.
 
-¤³¤ì¤Ï Merb ¤¬¼«Ê¬¤Î¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤Î¥ë¡¼¥È¥Ç¥£¥ì¥¯¥È¥ê°Ê³°¤Î¾ì½ê¤«¤éµ¯Æ°¤µ¤ì¤¿¤³¤È¤ò°ÕÌ£¤·¤Ş¤¹¡£
+ã“ã‚Œã¯ Merb ãŒè‡ªåˆ†ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ«ãƒ¼ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªä»¥å¤–ã®å ´æ‰€ã‹ã‚‰èµ·å‹•ã•ã‚ŒãŸã“ã¨ã‚’æ„å‘³ã—ã¾ã™ã€‚

@@ -5,7 +5,7 @@
 
 Merb filters are quite powerful, etc.. 
 
-Merb ¤Î¥Õ¥£¥ë¥¿¤Ï¼Â¤Ë¶¯ÎÏ¤Ç¤¹¡£¤¿¤È¤¨¤Ð...
+Merb ã®ãƒ•ã‚£ãƒ«ã‚¿ã¯å®Ÿã«å¼·åŠ›ã§ã™ã€‚ãŸã¨ãˆã°...
 
 In Rails:
 
@@ -19,7 +19,7 @@ In Merb:
     
 `skip_before` is used to skip a before filter
 
-`skip_before` ¤Ï before ¥Õ¥£¥ë¥¿¤òÈô¤Ð¤¹¤Î¤Ë»È¤ï¤ì¤Þ¤¹¡£
+`skip_before` ã¯ before ãƒ•ã‚£ãƒ«ã‚¿ã‚’é£›ã°ã™ã®ã«ä½¿ã‚ã‚Œã¾ã™ã€‚
 
 > NB: it's __exclude__ not except
 

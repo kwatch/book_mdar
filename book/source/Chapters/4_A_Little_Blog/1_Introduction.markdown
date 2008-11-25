@@ -1,6 +1,6 @@
-## A little blog (¾®¤µ¤Ê¥Ö¥í¥°)
+## A little blog (å°ã•ãªãƒ–ãƒ­ã‚°)
 
-#### What will be covered (¤³¤ÎÀá¤Ç¼è¤ê°·¤¦ÆâÍÆ)
+#### What will be covered (ã“ã®ç¯€ã§å–ã‚Šæ‰±ã†å†…å®¹)
 
  * Setting up the example blog application
  * Creating the models
@@ -9,24 +9,24 @@
  * Some of the view helpers in `merb_helpers`
  * Configuring and sending emails
 
- * ¥µ¥ó¥×¥ë¤È¤Ê¤ë¥Ö¥í¥°¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤ÎÀßÄê
- * ¥â¥Ç¥ë¤ÎºîÀ®
- * ¥ë¡¼¥Æ¥£¥ó¥°¤ÎÀßÄê¹½À®
- * RESTful ¤Ê¥³¥ó¥È¥í¡¼¥é
- * `merb_helpers` ¤ÇÄêµÁ¤µ¤ì¤Æ¤¤¤ë¥Ó¥å¡¼¥Ø¥ë¥Ñ¤Î¤¤¤¯¤Ä¤«
- * ÅÅ»Ò¥á¡¼¥ë¤ÎÁ÷¿®¤È¤½¤Î¤¿¤á¤ÎÀßÄê¹½À®
+ * ã‚µãƒ³ãƒ—ãƒ«ã¨ãªã‚‹ãƒ–ãƒ­ã‚°ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®è¨­å®š
+ * ãƒ¢ãƒ‡ãƒ«ã®ä½œæˆ
+ * ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ã®è¨­å®šæ§‹æˆ
+ * RESTful ãªã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©
+ * `merb_helpers` ã§å®šç¾©ã•ã‚Œã¦ã„ã‚‹ãƒ“ãƒ¥ãƒ¼ãƒ˜ãƒ«ãƒ‘ã®ã„ãã¤ã‹
+ * é›»å­ãƒ¡ãƒ¼ãƒ«ã®é€ä¿¡ã¨ãã®ãŸã‚ã®è¨­å®šæ§‹æˆ
 
 In the examples, we'll be developing a small blogging application. It's a good
 idea to grab the source code from [http://github.com/deimos1986/book_mdar/tree/master/code](http://github.com/deimos1986/book_mdar/tree/master/code), 
 so you can follow along with the examples.
 
-¥µ¥ó¥×¥ë¤Ç¤Ï¡¢¾®¤µ¤¤¥Ö¥í¥°¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤òºîÀ®¤·¤Ş¤¹¡£
-¥½¡¼¥¹¥³¡¼¥É¤Ï [http://github.com/deimos1986/book_mdar/tree/master/code](http://github.com/deimos1986/book_mdar/tree/master/code) ¤«¤é¼è¤Ã¤Æ¤³¤ì¤Ş¤¹¤Î¤Ç¡¢¥µ¥ó¥×¥ë¤Ë±è¤Ã¤Æ»î¤¹¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+ã‚µãƒ³ãƒ—ãƒ«ã§ã¯ã€å°ã•ã„ãƒ–ãƒ­ã‚°ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ä½œæˆã—ã¾ã™ã€‚
+ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ [http://github.com/deimos1986/book_mdar/tree/master/code](http://github.com/deimos1986/book_mdar/tree/master/code) ã‹ã‚‰å–ã£ã¦ã“ã‚Œã¾ã™ã®ã§ã€ã‚µãƒ³ãƒ—ãƒ«ã«æ²¿ã£ã¦è©¦ã™ã“ã¨ãŒã§ãã¾ã™ã€‚
 
 First of all, let's define some of the functionality we would expect from any 
 blogging application. 
 
-¤Ş¤ººÇ½é¤Ë¡¢¥Ö¥í¥°¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤È¤·¤Æ¹Í¤¨¤é¤ì¤ëµ¡Ç½¤ò¤¤¤¯¤Ä¤«ÄêµÁ¤·¤Ş¤·¤ç¤¦¡£
+ã¾ãšæœ€åˆã«ã€ãƒ–ãƒ­ã‚°ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¨ã—ã¦è€ƒãˆã‚‰ã‚Œã‚‹æ©Ÿèƒ½ã‚’ã„ãã¤ã‹å®šç¾©ã—ã¾ã—ã‚‡ã†ã€‚
 
 * Publishing posts
 * Leaving comments
@@ -34,31 +34,31 @@ blogging application.
 * Attaching images
 * Authentication
 
-* Åê¹Æ¤ò¸ø³«¤¹¤ë
-* ¥³¥á¥ó¥È¤ò»Ä¤¹
-* ÅÅ»Ò¥á¡¼¥ë¤ÇÄÌÃÎ¤¹¤ë
-* ²èÁü¤òÅºÉÕ¤¹¤ë
-* Ç§¾Ú¤¹¤ë
+* æŠ•ç¨¿ã‚’å…¬é–‹ã™ã‚‹
+* ã‚³ãƒ¡ãƒ³ãƒˆã‚’æ®‹ã™
+* é›»å­ãƒ¡ãƒ¼ãƒ«ã§é€šçŸ¥ã™ã‚‹
+* ç”»åƒã‚’æ·»ä»˜ã™ã‚‹
+* èªè¨¼ã™ã‚‹
 
 We're going to call our app `golb`. Think of it as a backward blog. Feel free 
 to change the name of your app, but if you do, remember to replace the word
 `golb` with the name of your app.
 
-¤³¤Î¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤Ï¡¢`golb` ¤È¤¤¤¦Ì¾Á°¤Ë¤¹¤ë¤³¤È¤Ë¤·¤Ş¤¹¡£
-¤³¤ì¤Ï¡¢`blog` ¤ÎµÕÆÉ¤ß¤Ç¤¹¡£
-¥¢¥×¥ê¤ÎÌ¾Á°¤Ï¼«Í³¤ËÊÑ¹¹¤·¤Æ¹½¤¤¤Ş¤»¤ó¤¬¡¢ÊÑ¹¹¤·¤¿¾ì¹ç¤Ï `golb` ¤È¤¤¤¦Ã±¸ì¤¬½Ğ¤Æ¤­¤¿¤éÊÑ¹¹¸å¤ÎÌ¾Á°¤ËÃÖ¤­´¹¤¨¤Æ¤¯¤À¤µ¤¤¡£
+ã“ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¯ã€`golb` ã¨ã„ã†åå‰ã«ã™ã‚‹ã“ã¨ã«ã—ã¾ã™ã€‚
+ã“ã‚Œã¯ã€`blog` ã®é€†èª­ã¿ã§ã™ã€‚
+ã‚¢ãƒ—ãƒªã®åå‰ã¯è‡ªç”±ã«å¤‰æ›´ã—ã¦æ§‹ã„ã¾ã›ã‚“ãŒã€å¤‰æ›´ã—ãŸå ´åˆã¯ `golb` ã¨ã„ã†å˜èªãŒå‡ºã¦ããŸã‚‰å¤‰æ›´å¾Œã®åå‰ã«ç½®ãæ›ãˆã¦ãã ã•ã„ã€‚
 
 To make a new app we'll use the command
 
-¿·¤·¤¤¥¢¥×¥ê¤òºî¤ë¤Ë¤Ï¡¢¼¡¤Î¥³¥Ş¥ó¥É¤ò»È¤¤¤Ş¤¹¡£
+æ–°ã—ã„ã‚¢ãƒ—ãƒªã‚’ä½œã‚‹ã«ã¯ã€æ¬¡ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ã„ã¾ã™ã€‚
 
     merb-gen app golb
 
 Set up the configuration files for your application, this lets Merb know what 
 gems to load for plugins and generators.
 
-¼«Ê¬¤Î¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¤ÎÀßÄê¹½À®¥Õ¥¡¥¤¥ë¤òÀßÄê¤·¤Æ¤¯¤À¤µ¤¤¡£
-¤½¤¦¤¹¤ë¤³¤È¤Ç¡¢¥×¥é¥°¥¤¥ó¤ä¥¸¥§¥Í¥ì¡¼¥¿¤Ç¤É¤Î gems ¤òÆÉ¤ß¹ş¤à¤Î¤«¡¢Merb ¤ÏÃÎ¤ë¤³¤È¤¬¤Ç¤­¤ë¤è¤¦¤Ë¤Ê¤ê¤Ş¤¹¡£
+è‡ªåˆ†ã®ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®è¨­å®šæ§‹æˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¨­å®šã—ã¦ãã ã•ã„ã€‚
+ãã†ã™ã‚‹ã“ã¨ã§ã€ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚„ã‚¸ã‚§ãƒãƒ¬ãƒ¼ã‚¿ã§ã©ã® gems ã‚’èª­ã¿è¾¼ã‚€ã®ã‹ã€Merb ã¯çŸ¥ã‚‹ã“ã¨ãŒã§ãã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚
 
 `config/init.rb`
 
@@ -71,7 +71,7 @@ gems to load for plugins and generators.
 
 Now add a `config/database.yml` file with the following:
 
-¤Ş¤¿ `config/database.yml` ¥Õ¥¡¥¤¥ë¤ò¼¡¤Î¤è¤¦¤ÊÆâÍÆ¤ÇºîÀ®¤·¤Æ¤¯¤À¤µ¤¤:
+ã¾ãŸ `config/database.yml` ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ¬¡ã®ã‚ˆã†ãªå†…å®¹ã§ä½œæˆã—ã¦ãã ã•ã„:
 
     ---
     # This is a sample database file for the DataMapper ORM
@@ -116,13 +116,13 @@ Now add a `config/database.yml` file with the following:
 	    
 Note: DataMapper has a rake task to generate a default database.yml file:
 
-Ãí°Õ: DataMapper ¤Ë¤Ï¡¢¥Ç¥Õ¥©¥ë¥È¤Î database.yml ¥Õ¥¡¥¤¥ë¤òÀ¸À®¤¹¤ë rake ¥¿¥¹¥¯¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Ş¤¹¡£
+æ³¨æ„: DataMapper ã«ã¯ã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã® database.yml ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã™ã‚‹ rake ã‚¿ã‚¹ã‚¯ãŒç”¨æ„ã•ã‚Œã¦ã„ã¾ã™ã€‚
     
     dm:db:database_yaml
     
 You can also put a database URI in development.rb (or other environments) just as easily:
 
-¤Ş¤¿ development.rb (¤Ş¤¿¤ÏÂ¾¤Î´Ä¶­ÀßÄê¥Õ¥¡¥¤¥ë) ¤Ë¥Ç¡¼¥¿¥Ù¡¼¥¹ URI ¤òÀßÄê¤¹¤ë¤³¤È¤â´ÊÃ±¤Ç¤¹:
+ã¾ãŸ development.rb (ã¾ãŸã¯ä»–ã®ç’°å¢ƒè¨­å®šãƒ•ã‚¡ã‚¤ãƒ«) ã«ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ URI ã‚’è¨­å®šã™ã‚‹ã“ã¨ã‚‚ç°¡å˜ã§ã™:
 
     Merb::BootLoader.after_app_loads do
       DataMapper.setup(:default, 'mysql://user:pass@localhost/database')
@@ -130,4 +130,4 @@ You can also put a database URI in development.rb (or other environments) just a
       
 Now we're ready to rock and roll ...
 
-¤³¤³¤Ş¤Ç¤­¤¿¤é¡¢¥í¥Ã¥¯¥ó¥í¡¼¥ë¤¹¤ë½àÈ÷¤Ï¤Ç¤­¤Ş¤·¤¿...
+ã“ã“ã¾ã§ããŸã‚‰ã€ãƒ­ãƒƒã‚¯ãƒ³ãƒ­ãƒ¼ãƒ«ã™ã‚‹æº–å‚™ã¯ã§ãã¾ã—ãŸ...

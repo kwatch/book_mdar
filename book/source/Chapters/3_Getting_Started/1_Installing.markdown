@@ -1,101 +1,101 @@
-## Getting Started (»Ï¤á¤Æ¤ß¤ë)
+## Getting Started (å§‹ã‚ã¦ã¿ã‚‹)
 
-¡ÌÌõÃí: ¤³¤³¤ÇÀâÌÀ¤µ¤ì¤Æ¤¤¤ëÊıË¡¤Ï¤ª´«¤á¤·¤Ş¤»¤ó¡£Ruby 1.8.X ¤È MySQL ¤È RugyGems 1.3.1 ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¡¢which mysql_config ¤Ç¥Ñ¥¹¤¬ÄÌ¤Ã¤Æ¤¤¤ë¤³¤È¤ò³ÎÇ§¤·¤¿¤¢¤È¡¢gem install merb --development ¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤¡£¤Ê¤ª Ruby 1.9 ¤ä¸Å¤¤ RubyGems ¤Ç¤Ï¤¦¤Ş¤¯Æ°¤­¤Ş¤»¤ó¡£¡Í
+ã€”è¨³æ³¨: ã“ã“ã§èª¬æ˜ã•ã‚Œã¦ã„ã‚‹æ–¹æ³•ã¯ãŠå‹§ã‚ã—ã¾ã›ã‚“ã€‚Ruby 1.8.X ã¨ MySQL ã¨ RugyGems 1.3.1 ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã€which mysql_config ã§ãƒ‘ã‚¹ãŒé€šã£ã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ãŸã‚ã¨ã€gem install merb --development ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚ãªãŠ Ruby 1.9 ã‚„å¤ã„ RubyGems ã§ã¯ã†ã¾ãå‹•ãã¾ã›ã‚“ã€‚ã€•
 
 <a href="http://xkcd.com/303/" target="_blank"> <img src="http://imgs.xkcd.com/comics/compiling.png" alt="XKCD - Compiling"> </a>
 
 Before we get started I'm going to assume you have the following installed:
 
-»Ï¤á¤ë¤Ş¤¨¤Ë¡¢¤ß¤Ê¤µ¤ó¤Ï°Ê²¼¤Î¤â¤Î¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¤¤ë¤³¤È¤ò³ÎÇ§¤·¤Æ¤¯¤À¤µ¤¤:
+å§‹ã‚ã‚‹ã¾ãˆã«ã€ã¿ãªã•ã‚“ã¯ä»¥ä¸‹ã®ã‚‚ã®ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¦ãã ã•ã„:
 
 * [Ruby](http://www.ruby-lang.org/) 
 * [RubyGems >= 1.1.0](http://www.rubygems.org/)
 * A DBMS (we'll use [MySQL](http://mysql.org/))
 * [SVN](http://subversion.tigris.org/) and [git](http://git.or.cz/)
 
-* [Ruby](http://www.ruby-lang.org/) ¡ÌÌõÃí: ¸½ºß¤ÎMerb ¤Ï 1.9 ¤Ç¤ÏÆ°¤­¤Ş¤»¤ó¡£1.8.X ¤ò»È¤Ã¤Æ¤¯¤À¤µ¤¤¡Í
-* [RubyGems >= 1.1.0](http://www.rubygems.org/) ¡ÌÌõÃí: 1.3.1 °Ê¾å¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¯¤À¤µ¤¤¡Í
-* DBMS (ËÜ¹Æ¤Ç¤Ï [MySQL](http://mysql.org/) ¤ò»È¤¤¤Ş¤¹)
-* [SVN](http://subversion.tigris.org/) ¤È [git](http://git.or.cz/) ¡ÌÌõÃí: ¤Ê¤¯¤Æ¤â¹½¤¤¤Ş¤»¤ó¡Í
+* [Ruby](http://www.ruby-lang.org/) ã€”è¨³æ³¨: ç¾åœ¨ã®Merb ã¯ 1.9 ã§ã¯å‹•ãã¾ã›ã‚“ã€‚1.8.X ã‚’ä½¿ã£ã¦ãã ã•ã„ã€•
+* [RubyGems >= 1.1.0](http://www.rubygems.org/) ã€”è¨³æ³¨: 1.3.1 ä»¥ä¸Šã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„ã€•
+* DBMS (æœ¬ç¨¿ã§ã¯ [MySQL](http://mysql.org/) ã‚’ä½¿ã„ã¾ã™)
+* [SVN](http://subversion.tigris.org/) ã¨ [git](http://git.or.cz/) ã€”è¨³æ³¨: ãªãã¦ã‚‚æ§‹ã„ã¾ã›ã‚“ã€•
 
-#### What will be covered (¼è¤ê¾å¤²¤ëÆâÍÆ)
+#### What will be covered (å–ã‚Šä¸Šã’ã‚‹å†…å®¹)
 
 * Installing Merb, DataMapper and RSpec
 * Creating a temporary test app
 * The basic directory structure for the framework
 
-* Merb ¤È DataMapper ¤È RSpec ¤Î¥¤¥ó¥¹¥È¡¼¥ë
-* °ì»şÅª¤Ê¥Æ¥¹¥È¥¢¥×¥ê¤ÎºîÀ®
-* ¥Õ¥ì¡¼¥à¥ï¡¼¥¯¤Î´ğËÜÅª¤Ê¥Ç¥£¥ì¥¯¥È¥ê¹½Â¤
+* Merb ã¨ DataMapper ã¨ RSpec ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+* ä¸€æ™‚çš„ãªãƒ†ã‚¹ãƒˆã‚¢ãƒ—ãƒªã®ä½œæˆ
+* ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¯ãƒ¼ã‚¯ã®åŸºæœ¬çš„ãªãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªæ§‹é€ 
 
-### The Easy Way (´ÊÃ±¤ÊÊıË¡)
+### The Easy Way (ç°¡å˜ãªæ–¹æ³•)
 
 If you're on a *nix operating system then keeping up to date with all the edge 
 versions of these gems can be made really easy by using the Sake tasks.
 
-¤â¤· *nix ·Ï¤Î¥ª¥Ú¥ì¡¼¥Æ¥£¥ó¥°¥·¥¹¥Æ¥à¤ò»È¤Ã¤Æ¤¤¤ë¤Ê¤é¡¢Sake ¥¿¥¹¥¯¤ò»È¤¦¤³¤È¤Ç¡¢¤³¤ì¤é¤Î gems ¤Î¥Ğ¡¼¥¸¥ç¥ó¤òºÇ¿·¤Î¤â¤Î¤ËÊİ¤Ä¤Î¤¬¼Â¤Ë´ÊÃ±¤Ë¤Ç¤­¤Ş¤¹¡£
+ã‚‚ã— *nix ç³»ã®ã‚ªãƒšãƒ¬ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ã‚·ã‚¹ãƒ†ãƒ ã‚’ä½¿ã£ã¦ã„ã‚‹ãªã‚‰ã€Sake ã‚¿ã‚¹ã‚¯ã‚’ä½¿ã†ã“ã¨ã§ã€ã“ã‚Œã‚‰ã® gems ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’æœ€æ–°ã®ã‚‚ã®ã«ä¿ã¤ã®ãŒå®Ÿã«ç°¡å˜ã«ã§ãã¾ã™ã€‚
 
 Merb sake tasks can be found in merb-more repository under tools directory.
 Sake tasks for DataMapper are in dm-dev repository at
 http://github.com/dkubb/dm-dev/.
 
-Merb ¤Î sake ¥¿¥¹¥¯¤Ï¡¢merb-more ¥ê¥İ¥¸¥È¥ê¤Î tools ¥Ç¥£¥ì¥¯¥È¥ê²¼¤Ë¤¢¤ê¤Ş¤¹¡£
-DataMapper ÍÑ¤Î Sake ¥¿¥¹¥¯¤Ï¡¢http://github.com/dkubb/dm-dev/ ¤Ë¤¢¤ë dm-dev ¥ê¥İ¥¸¥È¥ê¤ÎÃæ¤Ë¤¢¤ê¤Ş¤¹¡£
+Merb ã® sake ã‚¿ã‚¹ã‚¯ã¯ã€merb-more ãƒªãƒã‚¸ãƒˆãƒªã® tools ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªä¸‹ã«ã‚ã‚Šã¾ã™ã€‚
+DataMapper ç”¨ã® Sake ã‚¿ã‚¹ã‚¯ã¯ã€http://github.com/dkubb/dm-dev/ ã«ã‚ã‚‹ dm-dev ãƒªãƒã‚¸ãƒˆãƒªã®ä¸­ã«ã‚ã‚Šã¾ã™ã€‚
 
 To install Sake tasks run sake -i PATH where PATH is path to Sake tasks file
 on your local machine. For example,
 
-Sake ¥¿¥¹¥¯¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¤Ë¤Ï¡¢¼«Ê¬¤Î¥í¡¼¥«¥ë¥Ş¥·¥ó¤Ç sake -i PATH ¤ò¼Â¹Ô¤·¤Ş¤¹ (¤³¤³¤Ç PATH ¤Ï Sake ¥¿¥¹¥¯¥Õ¥¡¥¤¥ë¤Ø¤Î¥Ñ¥¹¤Ç¤¹)¡£
+Sake ã‚¿ã‚¹ã‚¯ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã«ã¯ã€è‡ªåˆ†ã®ãƒ­ãƒ¼ã‚«ãƒ«ãƒã‚·ãƒ³ã§ sake -i PATH ã‚’å®Ÿè¡Œã—ã¾ã™ (ã“ã“ã§ PATH ã¯ Sake ã‚¿ã‚¹ã‚¯ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®ãƒ‘ã‚¹ã§ã™)ã€‚
 
     sake -i ~/dev/opensource/merb/merb-more/tools/merb-dev.rake
 
 To do a fresh clone of all repositories use sake dm:clone and	merb:clone,
 respectively. And then to keep up to date you just need to execute:
 
-¤¹¤Ù¤Æ¤Î¥ê¥İ¥¸¥È¥ê¤Ë¤Ä¤¤¤Æ¥Õ¥ì¥Ã¥·¥å¥¯¥í¡¼¥ó¤ò¹Ô¤¦¤Ê¤é¡¢¤½¤ì¤¾¤ì sake dm:clone ¤È merb:clone ¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤¡£
-¤½¤Î¤¢¤È¡¢Merb ¤È DataMapper ¤Î gems ¤òºÇ¿·ÈÇ¤Ë¹¹¿·¤¹¤ë¤Ë¤Ï¡¢
+ã™ã¹ã¦ã®ãƒªãƒã‚¸ãƒˆãƒªã«ã¤ã„ã¦ãƒ•ãƒ¬ãƒƒã‚·ãƒ¥ã‚¯ãƒ­ãƒ¼ãƒ³ã‚’è¡Œã†ãªã‚‰ã€ãã‚Œãã‚Œ sake dm:clone ã¨ merb:clone ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
+ãã®ã‚ã¨ã€Merb ã¨ DataMapper ã® gems ã‚’æœ€æ–°ç‰ˆã«æ›´æ–°ã™ã‚‹ã«ã¯ã€
 
     sake dm:update
 
 and
 
-¤È
+ã¨
 
     sake merb:update
 
 to update Merb and DataMapper gems.
 
-¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤¡£
+ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
 
 But what you really want is probably to wipe out Merb and DM gems before update,
 do the update and install new updated gems. Use sake merb:gems:refresh and dm:gems:refresh to do so.
 
-¤·¤«¤·¡¢ËÜÅö¤ËÉ¬Í×¤È¤·¤Æ¤¤¤ë¤Î¤Ï¤ª¤½¤é¤¯¡¢Merb ¤È DM ¤Î gems ¤ò¹¹¿·¤¹¤ë¤è¤êÁ°¤Ë¤­¤ì¤¤¤Ë¾Ã¤·µî¤ê¡¢¤½¤ì¤«¤éºÇ¿·ÈÇ¤Î gems ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¤³¤È¤À¤È»×¤¤¤Ş¤¹¡£
-¤½¤Î¤¿¤á¤Ë¤Ï¡¢sake merb:gems:refresh ¤È dm:gems:refresh ¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤¡£
+ã—ã‹ã—ã€æœ¬å½“ã«å¿…è¦ã¨ã—ã¦ã„ã‚‹ã®ã¯ãŠãã‚‰ãã€Merb ã¨ DM ã® gems ã‚’æ›´æ–°ã™ã‚‹ã‚ˆã‚Šå‰ã«ãã‚Œã„ã«æ¶ˆã—å»ã‚Šã€ãã‚Œã‹ã‚‰æœ€æ–°ç‰ˆã® gems ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã“ã¨ã ã¨æ€ã„ã¾ã™ã€‚
+ãã®ãŸã‚ã«ã¯ã€sake merb:gems:refresh ã¨ dm:gems:refresh ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
 
-### If You're Hardcore (¤â¤·¥Ä¥ï¥â¥Î¤Ç¤¢¤ì¤Ğ)
+### If You're Hardcore (ã‚‚ã—ãƒ„ãƒ¯ãƒ¢ãƒã§ã‚ã‚Œã°)
 
-#### Installing Merb (Merb ¤Î¥¤¥ó¥¹¥È¡¼¥ë)
+#### Installing Merb (Merb ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«)
 ***
 If you have an older version of Merb (<0.9.2) you should remove all merb and 
 datamapper related gems before continuing. Use `gem list` to see your installed
 gems. The following command will uninstall the gem you specify:
 
-¤â¤·¸Å¤¤¥Ğ¡¼¥¸¥ç¥ó (<0.9.2) ¤Î Merb ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¤¤ë¤Ê¤é¡¢´ØÏ¢¤¹¤ë¤¹¤Ù¤Æ¤Î merb ¤È datamapper ¤Î gems ¤ò»öÁ°¤Ëºï½ü¤·¤Æ¤ª¤¯É¬Í×¤¬¤¢¤ê¤Ş¤¹¡£
-`gem list` ¤ò¼Â¹Ô¤·¤Æ¡¢¼«Ê¬¤¬¥¤¥ó¥È¡¼¥ë¤·¤¿ gems ¤ò³ÎÇ§¤·¤Æ¤¯¤À¤µ¤¤¡£
-¼¡¤Î¥³¥Ş¥ó¥É¤ò»È¤¦¤È¡¢»ØÄê¤·¤¿ gem ¤ò¥¢¥ó¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+ã‚‚ã—å¤ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ (<0.9.2) ã® Merb ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹ãªã‚‰ã€é–¢é€£ã™ã‚‹ã™ã¹ã¦ã® merb ã¨ datamapper ã® gems ã‚’äº‹å‰ã«å‰Šé™¤ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
+`gem list` ã‚’å®Ÿè¡Œã—ã¦ã€è‡ªåˆ†ãŒã‚¤ãƒ³ãƒˆãƒ¼ãƒ«ã—ãŸ gems ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚
+æ¬¡ã®ã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ã†ã¨ã€æŒ‡å®šã—ãŸ gem ã‚’ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
 
     sudo gem uninstall the_gem_name
 ***
 Installing the `merb` gems should be as simple as:
 
-`merb` gems ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¤Î¤ÏÈó¾ï¤Ë´ÊÃ±¤Ç¤¹:
+`merb` gems ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã®ã¯éå¸¸ã«ç°¡å˜ã§ã™:
     
     sudo gem install merb --source http://merbivore.org
     
 *or for JRuby:*
 
-*¤Ş¤¿¤Ï¡¢JRuby ¤ò»È¤Ã¤Æ¤¤¤ë¤Ê¤é:*
+*ã¾ãŸã¯ã€JRuby ã‚’ä½¿ã£ã¦ã„ã‚‹ãªã‚‰:*
     
     jruby -S gem install merb mongrel 
     
@@ -103,24 +103,24 @@ __Unfortunately__ we are living right on the edge of development so we'll need
 to get down and dirty with building our own gems from source. Luckily this is 
 much easier than it sounds... 
 
-__»ÄÇ°¤Ç¤¹¤¬__¡¢ËÜ¹Æ¤Ç¤ÏºÇ¿·¤Î³«È¯ÈÇ¤ò»È¤Ã¤Æ¤¤¤ë¤¿¤á¡¢¥½¡¼¥¹¤«¤é¼«Ê¬¤Î gems ¤ò¹½ÃÛ¤¹¤ë¤È¤¤¤¦±ø¤ì»Å»ö¤ò¤·¤Ê¤±¤ì¤Ğ¤Ê¤ê¤Ş¤»¤ó¡£
-¹¬±¿¤Ë¤â¡¢¤³¤ì¤Ï»×¤Ã¤¿°Ê¾å¤Ë¤º¤¤¤Ö¤ó¤È´ÊÃ±¤Ç¤¹...
+__æ®‹å¿µã§ã™ãŒ__ã€æœ¬ç¨¿ã§ã¯æœ€æ–°ã®é–‹ç™ºç‰ˆã‚’ä½¿ã£ã¦ã„ã‚‹ãŸã‚ã€ã‚½ãƒ¼ã‚¹ã‹ã‚‰è‡ªåˆ†ã® gems ã‚’æ§‹ç¯‰ã™ã‚‹ã¨ã„ã†æ±šã‚Œä»•äº‹ã‚’ã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚
+å¹¸é‹ã«ã‚‚ã€ã“ã‚Œã¯æ€ã£ãŸä»¥ä¸Šã«ãšã„ã¶ã‚“ã¨ç°¡å˜ã§ã™...
 
 Start by installing the `gem` dependancies:
 
-¤Ş¤º¤Ï°ÍÂ¸¤¹¤ë¤â¤Î¤ò `gem` ¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ş¤¹:
+ã¾ãšã¯ä¾å­˜ã™ã‚‹ã‚‚ã®ã‚’ `gem` ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¾ã™:
 
     sudo gem install rack mongrel json erubis mime-types rspec hpricot \
         mocha rubigen haml markaby mailfactory ruby2ruby
 
 *or for JRuby:*
-*¤Ş¤¿¤Ï JRuby ¤ò»È¤Ã¤Æ¤¤¤ë¤Ê¤é:*
+*ã¾ãŸã¯ JRuby ã‚’ä½¿ã£ã¦ã„ã‚‹ãªã‚‰:*
 
     jruby -S gem install rack mongrel json_pure erubis mime-types rspec hpricot \
         mocha rubigen haml markaby mailfactory ruby2ruby
 
 Then download the `merb` source:
-¤½¤·¤Æ `merb` ¤Î¥½¡¼¥¹¤ò¥À¥¦¥ó¥í¡¼¥É¤·¤Ş¤¹:
+ãã—ã¦ `merb` ã®ã‚½ãƒ¼ã‚¹ã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¾ã™:
 
     git clone git://github.com/sam/extlib.git
     git clone git://github.com/wycats/merb-core.git
@@ -128,7 +128,7 @@ Then download the `merb` source:
     git clone git://github.com/wycats/merb-more.git
 
 Then install the gems via rake:
-¤½¤ì¤«¤é rake ¤ò»È¤Ã¤Æ¤³¤ì¤é¤Î gems ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ş¤¹:
+ãã‚Œã‹ã‚‰ rake ã‚’ä½¿ã£ã¦ã“ã‚Œã‚‰ã® gems ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¾ã™:
 
     cd extlib ; rake install ; cd ..
     cd merb-core ; rake install ; cd ..    
@@ -138,42 +138,42 @@ Then install the gems via rake:
 Note that Merb and DataMappers share Extlib library since after 0.9.3 release of DM.
 The `json_pure` gem is needed for merb to install on [JRuby](http://jruby.codehaus.org/) (Java implementation of a Ruby Interpreter), otherwise use the `json` gem as it's faster.
 
-Ãí°Õ»ö¹à¤Ç¤¹¤¬¡¢Merb ¤È DataMapper ¤Ï¡¢DM 0.9.3 ¥ê¥ê¡¼¥¹°Ê¹ß¤Ï Extlib ¥é¥¤¥Ö¥é¥ê¤ò¶¦Í­¤·¤Ş¤¹¡£
-Merb ¤ò [JRuby](http://jruby.codehaus.org/) (Ruby ¥¤¥ó¥¿¥×¥ê¥¿¤Î Java ¼ÂÁõ) ¤Ë¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ë¤È¤­¤Ï¡¢`json_pure` gem ¤¬É¬Í×¤Ë¤Ê¤ê¤Ş¤¹¡£
-¤½¤ì°Ê³°¤Ç¤Ï¡¢¤è¤ê¹âÂ®¤Ê `json` gem ¤ò»È¤¤¤Ş¤·¤ç¤¦¡£
+æ³¨æ„äº‹é …ã§ã™ãŒã€Merb ã¨ DataMapper ã¯ã€DM 0.9.3 ãƒªãƒªãƒ¼ã‚¹ä»¥é™ã¯ Extlib ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‚’å…±æœ‰ã—ã¾ã™ã€‚
+Merb ã‚’ [JRuby](http://jruby.codehaus.org/) (Ruby ã‚¤ãƒ³ã‚¿ãƒ—ãƒªã‚¿ã® Java å®Ÿè£…) ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹ã¨ãã¯ã€`json_pure` gem ãŒå¿…è¦ã«ãªã‚Šã¾ã™ã€‚
+ãã‚Œä»¥å¤–ã§ã¯ã€ã‚ˆã‚Šé«˜é€Ÿãª `json` gem ã‚’ä½¿ã„ã¾ã—ã‚‡ã†ã€‚
 
 Merb is ORM agnostic, but as the title of this book suggests we'll be using 
 DataMapper. Should you want to stick with ActiveRecord or play with Sequel, 
 check the [Merb documentation](http://merb.rubyforge.org/files/README.html) for install instructions.
 
-Merb ¤Ç¤Ï ORM ¤ò¼«Í³¤ËÁª¤Ù¤Ş¤¹¤¬¡¢ËÜ¹Æ¤Î¥¿¥¤¥È¥ë¤¬¼¨¤¹¤è¤¦¤Ë¡¢¤³¤³¤Ç¤Ï DataMapper ¤ò»È¤¤¤Ş¤¹¡£
-¤â¤· ActiveRecord ¤Ë¸Ç¼¹¤·¤¿¤ê¡¢Sequel ¤ÇÍ·¤ó¤Ç¤ß¤¿¤¤¤È¤¤¤¦¾ì¹ç¤Ï¡¢[Merb documentation](http://merb.rubyforge.org/files/README.html) ¤òÆÉ¤ó¤Ç¥¤¥ó¥¹¥È¡¼¥ë¼ê½ç¤ò³ÎÇ§¤·¤Æ¤¯¤À¤µ¤¤¡£
+Merb ã§ã¯ ORM ã‚’è‡ªç”±ã«é¸ã¹ã¾ã™ãŒã€æœ¬ç¨¿ã®ã‚¿ã‚¤ãƒˆãƒ«ãŒç¤ºã™ã‚ˆã†ã«ã€ã“ã“ã§ã¯ DataMapper ã‚’ä½¿ã„ã¾ã™ã€‚
+ã‚‚ã— ActiveRecord ã«å›ºåŸ·ã—ãŸã‚Šã€Sequel ã§éŠã‚“ã§ã¿ãŸã„ã¨ã„ã†å ´åˆã¯ã€[Merb documentation](http://merb.rubyforge.org/files/README.html) ã‚’èª­ã‚“ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ‰‹é †ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚
 
-#### Installing DataMapper (DataMapper ¤Î¥¤¥ó¥¹¥È¡¼¥ë)
+#### Installing DataMapper (DataMapper ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«)
 
 ***
 DataMapper has spit into the gems `dm-core` and `dm-more`, the old `datamapper` 
 gem is now outdated.
 
-DataMapper ¤Ï¡¢`dm-core` ¤È `dm-more` ¤È¤¤¤¦¡¢2 ¤Ä¤Î gems ¤ËÊ¬¤«¤ì¤Æ¤¤¤Ş¤¹¡£
-`datamapper` ¤È¤¤¤¦ gem ¤Ï¸Å¤¤¤Î¤Ç¡¢»È¤ï¤Ê¤¤¤Ç¤¯¤À¤µ¤¤¡£
+DataMapper ã¯ã€`dm-core` ã¨ `dm-more` ã¨ã„ã†ã€2 ã¤ã® gems ã«åˆ†ã‹ã‚Œã¦ã„ã¾ã™ã€‚
+`datamapper` ã¨ã„ã† gem ã¯å¤ã„ã®ã§ã€ä½¿ã‚ãªã„ã§ãã ã•ã„ã€‚
 
 If you have an older version of `datamapper`, `data_objects`, or `do_mysql`, 
 `merb_datamapper` (< 0.9) you should remove them first.
 
-¤â¤· `datamapper` ¤ä `data_objects` ¤ä `do_mysql` ¤ä `merb_datamapper` (< 0.9) ¤È¤¤¤Ã¤¿¸Å¤¤¥Ğ¡¼¥¸¥ç¥ó¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¤¤ë¤Ê¤é¡¢¤Ş¤ººÇ½é¤Ë¤³¤ì¤é¤òºï½ü¤·¤Æ¤¯¤À¤µ¤¤¡£
+ã‚‚ã— `datamapper` ã‚„ `data_objects` ã‚„ `do_mysql` ã‚„ `merb_datamapper` (< 0.9) ã¨ã„ã£ãŸå¤ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã„ã‚‹ãªã‚‰ã€ã¾ãšæœ€åˆã«ã“ã‚Œã‚‰ã‚’å‰Šé™¤ã—ã¦ãã ã•ã„ã€‚
 ***
 
 We will use MySQL in the following example, but you can use either sqlite3 or 
 PostgreSQL, just install the appropriate gem. You will also need to ensure that 
 MySQL is on your system path for the gem to install correctly.
 
-ËÜ¹Æ¤Ç¤Ï°Ê¹ß¤Î¥µ¥ó¥×¥ë¤Ë MySQL ¤ò»ÈÍÑ¤·¤Ş¤¹¤¬¡¢Å¬ÀÚ¤Ê gem ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤¹¤ì¤Ğ¡¢sqlite3 ¤ä PostgreSQL ¤ò»È¤¦¤³¤È¤â²ÄÇ½¤Ç¤¹¡£
-¤Ş¤¿ gem ¤¬Àµ¤·¤¯¥¤¥ó¥¹¥È¡¼¥ë¤µ¤ì¤ë¤¿¤á¤Ë¡¢MySQL ¤¬¼«Ê¬¤Î¥·¥¹¥Æ¥à¥Ñ¥¹¤ËÂ¸ºß¤¹¤ë¤³¤È¤ò³ÎÇ§¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Ş¤¹¡£
+æœ¬ç¨¿ã§ã¯ä»¥é™ã®ã‚µãƒ³ãƒ—ãƒ«ã« MySQL ã‚’ä½¿ç”¨ã—ã¾ã™ãŒã€é©åˆ‡ãª gem ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚Œã°ã€sqlite3 ã‚„ PostgreSQL ã‚’ä½¿ã†ã“ã¨ã‚‚å¯èƒ½ã§ã™ã€‚
+ã¾ãŸ gem ãŒæ­£ã—ãã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã‚‹ãŸã‚ã«ã€MySQL ãŒè‡ªåˆ†ã®ã‚·ã‚¹ãƒ†ãƒ ãƒ‘ã‚¹ã«å­˜åœ¨ã™ã‚‹ã“ã¨ã‚’ç¢ºèªã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
 
 To get the gems from source:
 
-¥½¡¼¥¹¤«¤é gems ¤ò¹½ÃÛ¤¹¤ë¤Ë¤Ï:
+ã‚½ãƒ¼ã‚¹ã‹ã‚‰ gems ã‚’æ§‹ç¯‰ã™ã‚‹ã«ã¯:
 
     git clone git://github.com/sam/extlib.git  
     git clone git://github.com/sam/do.git
@@ -195,15 +195,15 @@ To get the gems from source:
     
 To update a gem from source, run `git pull` and `rake install` again.
 
-¥½¡¼¥¹¤«¤é gem ¤ò¹¹¿·¤¹¤ë¤Ë¤Ï¡¢`git pull` ¤È `rake install` ¤òºÆÅÙ¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤¡£
+ã‚½ãƒ¼ã‚¹ã‹ã‚‰ gem ã‚’æ›´æ–°ã™ã‚‹ã«ã¯ã€`git pull` ã¨ `rake install` ã‚’å†åº¦å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
 
-#### Install RSpec (RSpec ¤Î¥¤¥ó¥¹¥È¡¼¥ë)
+#### Install RSpec (RSpec ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«)
 
 The `rspec` gem was installed in the Merb section above. However, if you want 
 to grab the source, run one of the following commands:
 
-`rspec` ¤Î gem ¤Ï¡¢Àè¤Î Merb ¥»¥¯¥·¥ç¥ó¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤µ¤ì¤Æ¤¤¤Ş¤¹¡£
-¤·¤«¤·¡¢¤â¤·¥½¡¼¥¹¤«¤é¥¤¥ó¥¹¥È¡¼¥ë¤·¤¿¤¤¤Ê¤é¡¢¼¡¤Î¥³¥Ş¥ó¥É¤Î¤¦¤Á¤É¤Á¤é¤«¤ò¼Â¹Ô¤·¤Æ¤¯¤À¤µ¤¤:
+`rspec` ã® gem ã¯ã€å…ˆã® Merb ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã¾ã™ã€‚
+ã—ã‹ã—ã€ã‚‚ã—ã‚½ãƒ¼ã‚¹ã‹ã‚‰ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãŸã„ãªã‚‰ã€æ¬¡ã®ã‚³ãƒãƒ³ãƒ‰ã®ã†ã¡ã©ã¡ã‚‰ã‹ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„:
 
     gem install -r rspec
     

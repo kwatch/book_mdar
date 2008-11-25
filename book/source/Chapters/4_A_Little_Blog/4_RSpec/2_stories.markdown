@@ -6,37 +6,37 @@ RSpec Stories are use to replace the specification phase in requirements
 gathering, in the form of scenarios. So we have both a spec and a integration 
 tests.
 
-RSpec ¤Î¥¹¥È¡¼¥ê¡¼¤ÏÍ×·ï¼ı½¸¤Ë¤ª¤±¤ë»ÅÍÍºöÄê¥Õ¥§¡¼¥º¤ò¡¢¥·¥Ê¥ê¥ª¤Î·Á¤ÇÃÖ¤­´¹¤¨¤Ş¤¹¡£
-¤½¤Î¤¿¤á¡¢»ÅÍÍ¤ÈÅı¹ç¥Æ¥¹¥È¤ÎÎ¾Êı¤ò¼ê¤ËÆş¤ì¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+RSpec ã®ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã¯è¦ä»¶åé›†ã«ãŠã‘ã‚‹ä»•æ§˜ç­–å®šãƒ•ã‚§ãƒ¼ã‚ºã‚’ã€ã‚·ãƒŠãƒªã‚ªã®å½¢ã§ç½®ãæ›ãˆã¾ã™ã€‚
+ãã®ãŸã‚ã€ä»•æ§˜ã¨çµ±åˆãƒ†ã‚¹ãƒˆã®ä¸¡æ–¹ã‚’æ‰‹ã«å…¥ã‚Œã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
 
 Add this line to your app's test environment:
 
-¼«Ê¬¤Î¥¢¥×¥ê¤Î test ´Ä¶­¤Ë¼¡¤Î¹Ô¤òÄÉ²Ã¤·¤Æ¤¯¤À¤µ¤¤:
+è‡ªåˆ†ã®ã‚¢ãƒ—ãƒªã® test ç’°å¢ƒã«æ¬¡ã®è¡Œã‚’è¿½åŠ ã—ã¦ãã ã•ã„:
 
 	dependency "merb_stories"
 	
 Now generate your story:
 
-¼¡¤Ë¼«Ê¬¤Î¥¹¥È¡¼¥ê¡¼¤òÀ¸À®¤·¤Ş¤¹:
+æ¬¡ã«è‡ªåˆ†ã®ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã‚’ç”Ÿæˆã—ã¾ã™:
 
 	merb-gen story mystory
 
 Now run your story:
 
-Â³¤¤¤Æ¥¹¥È¡¼¥ê¡¼¤ò¼Â¹Ô¤·¤Ş¤·¤ç¤¦:
+ç¶šã„ã¦ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã‚’å®Ÿè¡Œã—ã¾ã—ã‚‡ã†:
 
 	MERB_ENV=test rake story[mystory]
   
 Yes, you must include the square brackets.
 
-³Ñ¥«¥Ã¥³¤ÏÉ¬Í×¤Ç¤¹¤Î¤ÇÃí°Õ¤·¤Æ¤¯¤À¤µ¤¤¡£
+è§’ã‚«ãƒƒã‚³ã¯å¿…è¦ã§ã™ã®ã§æ³¨æ„ã—ã¦ãã ã•ã„ã€‚
 
 Now fill out your story. There are some differences to Rails' versions. 
 The best places to look for help are in the Merb code itself:
 
-¤³¤³¤Ç¡¢¥¹¥È¡¼¥ê¡¼¤òËä¤á¤Æ¤·¤Ş¤¤¤Ş¤·¤ç¤¦¡£
-Rails ¤Î¾ì¹ç¤È¤Ï¾¯¤·°ã¤¦ÅÀ¤¬¤¢¤ê¤Ş¤¹¡£
-¤¤¤Á¤Ğ¤ó»²¹Í¤Ë¤Ê¤ë¤Î¤Ï¡¢Merb ¤Î¥³¡¼¥É¼«¿È¤Ç¤¹:
+ã“ã“ã§ã€ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã‚’åŸ‹ã‚ã¦ã—ã¾ã„ã¾ã—ã‚‡ã†ã€‚
+Rails ã®å ´åˆã¨ã¯å°‘ã—é•ã†ç‚¹ãŒã‚ã‚Šã¾ã™ã€‚
+ã„ã¡ã°ã‚“å‚è€ƒã«ãªã‚‹ã®ã¯ã€Merb ã®ã‚³ãƒ¼ãƒ‰è‡ªèº«ã§ã™:
 
 	spec/public/test/controller _matchers _spec.rb
 	lib/merb-core/test/helpers
