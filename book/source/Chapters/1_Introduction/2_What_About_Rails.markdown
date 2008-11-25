@@ -17,7 +17,7 @@ to do things 'the Rails way'.
 Ruby on Rails が Web アプリケーション開発の世界を揺るがしていることはほぼ間違いありません。
 人は、賞賛すべきものはきちんと賞賛すべきであり、そして Ruby on Rails は間違いなくすばらしい Web フレームワークです。
 しかし、それ 1 つですべての問題を解決してしまうような万能なものはありません。
-Ruby on Rails は、たとえば設定より規約 (Convention over Configuration, CoC) のように、たくさんの利点を提供するけど頑固なソフトウェアです。
+Ruby on Rails は、たとえば設定より規約 (Convention over Configuration, CoC) のように、たくさんの利点を提供するけど頑固な (opinionated) ソフトウェアです。
 一方で、'Rails 流' 以外の方法でなにかしたいとき、Ruby on Rails はそれを許してはくれません。
  
 Where Rails is opinionated, Merb is agnostic. For example, you can easily use 
@@ -26,7 +26,7 @@ Similarly, you can choose the Javascript library and template language that you
 are most comfortable with, or that best meets the requirements of your specific 
 project.
 
-Rails は頑固であり、Merb はそうではありません。
+Rails は頑固 (opinionated) であり、Merb は不可知論者 (agnostic) です。
 たとえば、もし自分の好きな ORM (ActiveRecord, DataMapper, Sequel) を使いたい、あるいは何も使いたくないと思ったら、簡単にできます。
 同様に、JavaScript ライブラリやテンプレート言語でも、自分が使いたいものを、あるいはプロジェクトの要件に最もよく合うものを選ぶことができます。
 
@@ -35,7 +35,7 @@ If performant were a word, Merb would be it.  One of Merb's design mantras is
 thread-safe. The core functionality is kept separate from the other plugins 
 and it uses less Ruby 'magic', making it easier to understand and hack.
 
-もしパフォーマンスが大事なら〔訳注: ???〕、Merb を選ぶといいでしょう。
+もしパフォーマンスが神の言葉であれば、Merb はきっとそれに違いありません〔訳注: ???〕。
 Merb の設計におけるスローガンのひとつに、『何も書かない (no code) よりも速いコードはない (No code)』というものがあります。
 Merb は非常に高速なルーティングを持ち、かつ Merb はスレッドセーフです。
 コア機能は他のプラグインから分離されており、Ruby の「魔法」はほぼ使ってないため、理解してハックするのは簡単でしょう。

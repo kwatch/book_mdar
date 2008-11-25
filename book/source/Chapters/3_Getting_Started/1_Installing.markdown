@@ -1,5 +1,7 @@
 ## Getting Started (始めてみる)
 
+〔訳注: ここで説明されている方法はお勧めしません。Ruby 1.8.X と MySQL と RugyGems 1.3.1 をインストールして、which mysql_config でパスが通っていることを確認したあと、gem install merb --development を実行してください。なお Ruby 1.9 や古い RubyGems ではうまく動きません。〕
+
 <a href="http://xkcd.com/303/" target="_blank"> <img src="http://imgs.xkcd.com/comics/compiling.png" alt="XKCD - Compiling"> </a>
 
 Before we get started I'm going to assume you have the following installed:
@@ -11,10 +13,10 @@ Before we get started I'm going to assume you have the following installed:
 * A DBMS (we'll use [MySQL](http://mysql.org/))
 * [SVN](http://subversion.tigris.org/) and [git](http://git.or.cz/)
 
-* [Ruby](http://www.ruby-lang.org/) 
-* [RubyGems >= 1.1.0](http://www.rubygems.org/)
+* [Ruby](http://www.ruby-lang.org/) 〔訳注: 現在のMerb は 1.9 では動きません。1.8.X を使ってください〕
+* [RubyGems >= 1.1.0](http://www.rubygems.org/) 〔訳注: 1.3.1 以上をインストールしてください〕
 * DBMS (本稿では [MySQL](http://mysql.org/) を使います)
-* [SVN](http://subversion.tigris.org/) と [git](http://git.or.cz/)
+* [SVN](http://subversion.tigris.org/) と [git](http://git.or.cz/) 〔訳注: なくても構いません〕
 
 #### What will be covered (取り上げる内容)
 

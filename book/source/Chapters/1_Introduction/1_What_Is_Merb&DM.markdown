@@ -19,7 +19,8 @@ Merb is a relatively new web framework with an initial 0.0.1 release in October
 continues to actively develop Merb along with a dedicated development team at 
 [Engine Yard](http://www.engineyard.com) and many other community contributors.  
 
-Merb は比較的新しい Web アプリケーションフレームワークであり、最初のバージョン 0.0.1 がリリースされたのは 2006 年 10 月です。[Ezra Zygmuntowicz](http://brainspl.at/) が Merb の作者であり、[Engine Yard](http://www.engineyard.com) の熱心な開発チームや他のコミュニティメンバとともに、活発な開発を継続しています。
+Merb は比較的新しい Web アプリケーションフレームワークであり、最初のバージョン 0.0.1 がリリースされたのは 2006 年 10 月です。
+[Ezra Zygmuntowicz](http://brainspl.at/) が Merb の作者であり、[Engine Yard](http://www.engineyard.com) の熱心な開発チームや他のコミュニティメンバとともに、活発な開発を継続しています。
 
 Merb has obvious roots and inspiration in the 
 [Ruby on Rails](http://www.rubyonrails.com) web framework.  If you know Ruby and
@@ -39,7 +40,7 @@ features.
 
 両者に似た点はあるものの、Merb は Ruby on Rails ではありません。
 設計と哲学に、明確な違いがあります。
-Rails には意固地な点が多々ありますが、Merb はそうではありません - たとえば ORM や、JavaScript ライブラリや、テンプレート言語についてがそうです。
+Rails には意固地な (opinionated) 点が多々ありますが、Merb は不可知論者 (agnostic) です〔訳注: すべてを知りうることはできないという考えのこと〕 - たとえば ORM や、JavaScript ライブラリや、テンプレート言語についてがそうです。
 Merb の哲学では、モノリシック (一枚岩) なフレームワークに対すして不信感を持っています。
 かわりに、Merb は複数の gems から構成されています: `merb-core` と `merb-more` と `merb-plugins` です。
 つまり、本質的でない機能でフレームワークをごちゃごちゃにするのではなく、自分が必要とする機能を取捨選択することができるというわけです。
@@ -104,7 +105,7 @@ Languages which help to make the stories and specs created more readable.
 
 RSpec は、Ruby 用の振る舞い駆動開発フレームワークです。
 RSpec は主に、統合テストのためのストーリーフレームワークと、オブジェクトテスト〔訳注: 単体テストのことと思われる〕のための仕様フレームワークの、2 つの部分から構成されています。
-これら両方のコンポーネントが特定ドメイン向け言語 (DSL) で実装されており、これによりストーリーと仕様がより読みやすくなります。
+これら両方のコンポーネントが問題領域特化言語 (DSL) で実装されており、これによりストーリーと仕様がより読みやすくなります。
 
 Merb currently supports the Test::Unit and RSpec testing frameworks. Both Merb
 and Datamapper use the RSpec testing frameworks and so we will be covering some

@@ -111,6 +111,8 @@ Some of the available options are:
     :protected    - :reader => :public, :writer => :protected と同じ
     :private      - :reader => :public, :writer => :private と同じ
 
+〔訳注: 一意制約は :unique_index => true を指定します。複数のプロパティにまたがる一意制約は、:unque_index => :u1 をそれぞれのプロパティに指定します (ここで :u1 は任意の Symbol)。〕
+
 (TODO) - talk about accessors and overriding them
 
 (TODO) - アクセッサとそれらの上書きについて追記する
@@ -253,7 +255,7 @@ When retrieving data the following parameters can be used:
 If the parameters are not found in these conditions it is assumed to be an
 attribute of the object.
 
-もしパラメータがこれらの条件になかった場合は、オブジェクトの属性であると仮定されます〔訳注: どういうこと???〕。
+もしこれらに含まれないパラメータが指定された場合は、それはオブジェクトの属性〔訳注: テーブルのカラム名〕だと見なされます。
 
 You can also use symbol operators with the find to further specify a condition,
 for example:
@@ -358,6 +360,10 @@ the association, it can be an arbitrary range.  Some examples:
     has 0..n #=> will have a MIN of 0 records and a MAX of n
     has 1..n #=> will have a MIN of 1 record and a MAX of n
     has 1..3 #=> will have a MIN of 1 record and a MAX of 3
+
+    has 0..n #=> 0 個以上のレコードを持つ
+    has 1..n #=> 1 個以上のレコードを持つ
+    has 1..3 #=> 1 個以上 3 個以下のレコードを持つ
 
 Pretty straight forward. A few things you should note however, you do not need
 to specify the foreign key as a property if it's defined in the association.
@@ -498,7 +504,7 @@ within that field.  So when we validate our model DataMapper will check we ...
 どれだけたくさんのバリデーションが Post クラスにあるかわかりますか?
 ActiveRecord に慣れている人なら、答えは明らかに「1」でしょう。
 body が何らかのデータを含んでいなければならない - つまり body が存在してないといけない、というバリデーションだけがあるからです。
-しかし DataMapper の場合、dm-validations によって、_4 つ_のバリデーションが設定されます。
+しかし DataMapper の場合、dm-validations によって、 _4 つ_ のバリデーションが設定されます。
 たとえばプロパティで `:length => 0..255` と宣言した場合、これはフィールドの最大長を宣言しただけでなく、入力された値がこのフィールド内に収まるかどうかをチェックするようなバリデーションも追加されるのです。
 そのため、モデルをバリデーションすると、DataMapper は以下のことをチェックします...
 
@@ -705,7 +711,7 @@ Yup, it's pretty simple with ActiveRecord. Just toss in our own valid? method an
 we're done. With DataMapper, things are a touch more complicated, but not
 difficult, and buy you the full power of dm-validations:
 
-自分自身で valid? メソッドを定義するだけであり〔訳注: わからん???〕、ActiveRecord を使って実にシンプルにできました。
+ええ、ActiveRecord では実にシンプルです。単に自分で valid? メソッドを定義するだけであり、事実その通りにできました。
 DataMapper の場合は、より複雑になりますが、難しくはなく、また dm-validations の力をすべて享受できます。
 
     class Event
@@ -884,6 +890,8 @@ merb_datamapper
     rake dm:db:migrate:up                   # migrates the database up
     rake dm:db:migrate:down                 # migrates the database down
 
+〔訳注: これは古いタスク名です。Merb 1.0 以降は dm:db:xxxx のかわりに db:xxxx を使ってください。〕
+
 Which apply or remove all the migrations in turn.  Sometimes, you don't want to
 go all the way up (or down) and so you can also specify a level to migrate to,
 via `VERSION=2` or invoking a task like `rake dm:db:migrate:up[2]`.  For both up
@@ -1032,7 +1040,7 @@ instantiating a few objects at a time and executing the block on them (so is les
 resource intensive). Each is similar to a finder as it can also take options:
 
 Each は、たくさんの行に対して繰り返しを行ないます〔訳注: "like like" ってなんじゃ???〕。
-また Each にブロックを渡すことができます。
+また each にブロックを渡すことができます。
 `Comments.all.each` と `Comments.each` の違いは、前者が一度にすべての行を取り出すのに対し、後者はオブジェクトを少しずつインスタンス化してブロックを実行するという点です (そのため後者のほうがリソースの消費が劇的に少なくて済みます)。
 Each はオプションを取ることができるので、finder に似ています:
 

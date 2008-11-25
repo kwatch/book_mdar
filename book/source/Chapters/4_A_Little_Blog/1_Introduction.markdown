@@ -45,7 +45,7 @@ to change the name of your app, but if you do, remember to replace the word
 `golb` with the name of your app.
 
 このアプリケーションは、`golb` という名前にすることにします。
-バックワードのブログとして考えてください〔訳注: ???〕。
+これは、`blog` の逆読みです。
 アプリの名前は自由に変更して構いませんが、変更した場合は `golb` という単語が出てきたら変更後の名前に置き換えてください。
 
 To make a new app we'll use the command

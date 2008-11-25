@@ -52,7 +52,7 @@ here. The `rack.rb` file is the rack handler and you can pass options to
 `merb -a` to change rack adapter.
 
 Merb のルータは、受信したリクエストをコントローラに対応づける役目を持っていますが、それもここにあります。
-`rakc.rb` は Rack ハンドラであり、`merb -a` にオプションを渡して Rack アダプタを変更することができます。
+`rack.rb` ファイルは Rack ハンドラであり、`merb -a` にオプションを渡して Rack アダプタを変更することができます。
 
 	config
 	  `--> environments

@@ -13,7 +13,7 @@ think of it as `script/generate`. Running `merb-gen` from the command line with
 no arguments will show you all of the generators that are available.
 
 Merb-more をインストールすると、`merb-gen` という gem もインストールされます。
-この gem は、ジェネレータが必要な場面で使われる同名のコマンドラインツールを提供します〔訳注: うまく訳せない〕。
+この gem は、ジェネレータとして必要なものをすべて備えた、同名のコマンドラインツールを提供します。
 ちょうど〔訳注: Ruby on Rails における〕 `script/generate` のようなものだと思ってください。
 コマンドラインから `merb-gen` を引数なしで実行すると、利用可能なすべてのジェネレータが表示されます。
 
